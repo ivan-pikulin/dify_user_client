@@ -11,7 +11,7 @@ pip install dify-user-client
 ## Quick Start
 
 ```python
-from dify_utils import DifyClient, Credentials
+from dify_user_client import DifyClient, Credentials
 
 # Initialize credentials with username and password
 credentials = Credentials(username="your_username", password="your_password")
@@ -41,7 +41,7 @@ For more detailed documentation, please visit [the documentation page](https://g
 1. Clone the repository:
    ```bash
    git clone https://github.com/ivan-pikulin/dify_user_client.git
-   cd dify_utils
+   cd dify_user_client
    ```
 
 2. Create a virtual environment and install dependencies:
