@@ -1,7 +1,7 @@
 import pytest
 
 from dify_user_client import DifyClient
-from dify_user_client.knowledge import (DifyKnowledgeClient, KnowledgeDataset,
+from dify_user_client.knowledge import (DifyKnowledgeClient, KnowledgeDocumentData, KnowledgeDataset,
                                   KnowledgeDocument,
                                   KnowledgeDocumentSegmentSettings,
                                   KnowledgeSegment, KnowledgeSegmentSettings,
@@ -135,6 +135,47 @@ def test_create_delete_segment(client: DifyClient):
             with pytest.raises(ValueError, match=".*not found.*"):
                 document.get_segment(segment.id)
 
+        document.delete()
+
+        with pytest.raises(ValueError, match=".*not found.*"):
+            dataset.get_document(document.id)
+    finally:
+        dataset.delete()
+
+    with pytest.raises(ValueError, match=".*not found.*"):
+        knowledge.get_dataset(dataset.id)
+
+def test_get_document_data(client: DifyClient):
+    knowledge = client.knowledge
+    try:
+        dataset = knowledge.create_dataset(name="test_dataset")
+        document = dataset.create_document_by_text(
+            text="test_content",
+            settings=KnowledgeSegmentSettings(
+                **{
+                    "name": "test_document",
+                    "indexing_technique": "high_quality",
+                    "process_rule": {
+                        "mode": "automatic",
+                        "rules": {
+                            "pre_processing_rules": [
+                                {
+                                    "id": "remove_extra_spaces",
+                                    "enabled": True
+                                }
+                            ],
+                            "segmentation": {
+                                "separator": "###",
+                                "max_tokens": 1000
+                            }
+                        }
+                    }
+                }
+            )
+        )
+        document.wait_for_indexing(timeout=10)
+        data = document.data
+        assert isinstance(data, KnowledgeDocumentData)
         document.delete()
 
         with pytest.raises(ValueError, match=".*not found.*"):

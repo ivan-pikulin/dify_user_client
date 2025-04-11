@@ -24,21 +24,6 @@ class DocumentIndexingStatuses(str, Enum):
     ERROR = "error"
     PAUSED = "paused"
 
-
-class DocumentData(BaseModel):
-    id: str
-    dataset_id: str
-    name: str
-    content: str
-    created_at: int
-    updated_at: int
-    indexing_status: DocumentIndexingStatuses
-    word_count: int
-    character_count: int
-    segment_count: int
-    metadata: dict = Field(default_factory=dict)
-
-
 class KnowledgeToken(BaseModel):
     id: str
     type: Literal["dataset"]
@@ -80,6 +65,36 @@ class KnowledgeDocumentSegmentSettings(BaseModel):
         None, description="Answer content, if the mode of the knowledge is Q&A mode, pass the value (optional)")
     keywords: Optional[list[str]] = Field(
         None, description="Keywords (optional)")
+
+
+class KnowledgeDocumentData(BaseModel):
+    id: str
+    name: str
+    data_source_type: str
+    data_source_info: dict
+    dataset_process_rule_id: str
+    dataset_process_rule: ProcessRule
+    created_from: str
+    created_by: str
+    created_at: float
+    tokens: int
+    indexing_status: DocumentIndexingStatuses
+    completed_at: Optional[float] = None
+    updated_at: float
+    indexing_latency: Optional[float] = None
+    error: Optional[str] = None
+    enabled: bool
+    disabled_at: Optional[float] = None
+    disabled_by: Optional[str] = None
+    archived: bool
+    segment_count: int
+    average_segment_length: int
+    hit_count: int
+    display_status: Literal["queuing", "paused", "indexing", "error", "available", "disabled", "archived"]
+    doc_form: str
+    doc_language: str
+    metadata: dict = Field(default_factory=dict)
+
 
 
 class KnowledgeSegment:
@@ -170,12 +185,12 @@ class KnowledgeDocument:
             time.sleep(1)
 
     @property
-    def data(self) -> DocumentData:
+    def data(self) -> KnowledgeDocumentData:
         """Fetch and return the document data."""
         url = f"{self.client.base_url}/console/api/datasets/{self.dataset.id}/documents/{self.id}"
         params = {"metadata": "without"}
-        response = self.client._send_api_request("GET", url, params=params)
-        return DocumentData.model_validate(response)
+        response = self.client._send_user_request("GET", url, params=params)
+        return KnowledgeDocumentData.model_validate(response)
 
 
 class KnowledgeDataset:
