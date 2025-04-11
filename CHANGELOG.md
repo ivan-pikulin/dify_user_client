@@ -8,6 +8,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- None
+
+### Changed
+- None
+
+### Deprecated
+- None
+
+### Removed
+- None
+
+### Fixed
+- None
+
+### Security
+- None
+
+## [0.0.3] - 2025-04-11
+
+### Added
 - Initial project setup
 - Basic Dify API client functionality
 - GitHub Actions workflow for automated publishing
@@ -27,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - None
 
-## [0.0.2] - 2024-03-21
+## [0.0.2] - 2025-04-11
 
 ### Added
 - Initial release
@@ -40,7 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - None
 
-## [0.0.1] - 2024-03-20
+## [0.0.1] - 2025-04-11
 
 ### Added
 - Project initialization
