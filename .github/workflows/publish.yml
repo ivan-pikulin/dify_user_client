@@ -68,7 +68,7 @@ jobs:
           body: |
             ## What's Changed
             
-            See the [changelog](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
+            See the [changelog](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/CHANGELOG.md) for details.
             
             ## Installation
             
