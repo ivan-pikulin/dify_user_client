@@ -60,7 +60,7 @@ For more detailed documentation, please visit [the documentation page](https://g
 
 ```bash
 # Install test dependencies
-uv add pytest
+uv pip install -e ".[dev]"
 
 # Run tests
 pytest
