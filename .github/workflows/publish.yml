@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*' # Триггер на пуш тегов с версией
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -73,5 +77,3 @@ jobs:
             ```
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
