@@ -14,5 +14,12 @@ dependencies = [
     "requests>=2.32.3",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "ipykernel>=6.29.0",
+    "pytest>=8.3.5",
+    "python-dotenv>=1.1.0",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["dify_user_client"] 
