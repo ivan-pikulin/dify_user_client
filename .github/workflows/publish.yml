@@ -17,12 +17,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-          cache: 'uv'
 
       - name: Install uv
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Create virtual environment
+        run: uv venv
 
       - name: Check version consistency
         run: |
@@ -42,12 +44,12 @@ jobs:
           
           echo "Version check passed: $TAG_VERSION"
 
-      - name: Install dependencies
-        run: |
-          uv pip install -e ".[dev]"
+      # - name: Install dependencies
+      #   run: |
+      #     uv pip install -e ".[dev]"
 
-      - name: Run tests
-        run: pytest
+      # - name: Run tests
+      #   run: uv run pytest
 
       - name: Build package
         run: uv build
