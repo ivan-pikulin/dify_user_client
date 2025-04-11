@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "dify_user_client"
+name = "dify-user-client"
 version = "0.0.1"
 description = "A Python utility library for interacting with Dify as if you were using the UI. Perform any action available through the user interface."
 readme = "README.md"

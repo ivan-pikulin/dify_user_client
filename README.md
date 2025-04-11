@@ -5,11 +5,7 @@ A Python utility library for interacting with Dify as if you were using the UI. 
 ## Installation
 
 ```bash
-# Using pip
 pip install dify-user-client
-
-# Using uv (recommended)
-uv pip install dify-user-client
 ```
 
 ## Quick Start
@@ -36,7 +32,7 @@ applications = client.apps
 
 ## Documentation
 
-For more detailed documentation, please visit [the documentation page](https://github.com/ivan-pikulin/dify_utils#readme).
+For more detailed documentation, please visit [the documentation page](https://github.com/ivan-pikulin/dify_user_client).
 
 ## Development
 
@@ -44,7 +40,7 @@ For more detailed documentation, please visit [the documentation page](https://g
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ivan-pikulin/dify_utils.git
+   git clone https://github.com/ivan-pikulin/dify_user_client.git
    cd dify_utils
    ```
 
@@ -64,7 +60,7 @@ For more detailed documentation, please visit [the documentation page](https://g
 
 ```bash
 # Install test dependencies
-uv pip install pytest
+uv add pytest
 
 # Run tests
 pytest
