@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dify_user_client"
+version = "0.0.1"
+description = "A Python utility library for interacting with Dify as if you were using the UI. Perform any action available through the user interface."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.11.3",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.3",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["dify_user_client"] 
