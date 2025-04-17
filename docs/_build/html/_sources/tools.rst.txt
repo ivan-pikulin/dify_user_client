@@ -4,7 +4,7 @@ Tools
 This section describes the tools functionality in the Dify client.
 
 Tool Providers
---------------
+------------
 
 .. py:class:: ToolProvider
 
@@ -82,7 +82,7 @@ Tools
       Get tool information.
 
 Data Models
------------
+----------
 
 .. py:class:: ToolInfo
 
