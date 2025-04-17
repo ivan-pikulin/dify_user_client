@@ -3,6 +3,7 @@ from enum import Enum
 from typing import Literal, Optional
 
 from pydantic import BaseModel
+import yaml
 
 from .base import DifyBaseClient
 from .tools import WorkflowToolProviderInfo
@@ -230,6 +231,13 @@ class WorkflowApp(App):
 
 class AgentApp(App):
     type = AppType.agent
+
+    def import_yaml(self, yaml_content) -> str:
+        yaml_dict = yaml.safe_load(yaml_content)
+        url = f"{self.client.base_url}/console/api/apps/{self.id}/model-config"
+        self.client._send_user_request("POST", url, json=yaml_dict["model_config"])
+        self.update_info(yaml_dict["app"])
+        return self.id
 
 
 class ChatApp(App):

@@ -60,6 +60,17 @@ class TestAgentApp(BaseTestApp):
     mode = AppType.agent
     app_class = AgentApp
 
+    def test_import_yaml(self, client: DifyClient):
+        agent_app = client.create_app(
+            name=f"test-{self.mode}-app",
+            mode=self.mode)
+        try:
+            agent_app.import_yaml(agent_app.export_yaml())
+            assert isinstance(agent_app, self.app_class)
+
+        finally:
+            agent_app.delete()
+
 
 class TestChatApp(BaseTestApp):
     mode = AppType.chat
@@ -74,6 +85,16 @@ class TestCompletionApp(BaseTestApp):
 class TestWorkflowApp(BaseTestApp):
     mode = AppType.workflow
     app_class = WorkflowApp
+
+    def test_import_yaml(self, client: DifyClient):
+        workflow_app = client.create_app(
+            name=f"test-{self.mode}-app",
+            mode=self.mode)
+        try:
+            workflow_app.import_yaml(workflow_app.export_yaml())
+            assert isinstance(workflow_app, self.app_class)
+        finally:
+            workflow_app.delete()
 
 
 class TestAdvancedChatApp(BaseTestApp):
