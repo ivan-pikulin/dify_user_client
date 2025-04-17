@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -41,7 +40,6 @@ htmlcov/
 .tox/
 
 # Documentation
-docs/_build/
 site/
 
 # Jupyter Notebook
