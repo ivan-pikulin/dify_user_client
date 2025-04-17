@@ -23,3 +23,8 @@ dev = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["dify_user_client"] 
+
+[dependency-groups]
+dev = [
+    "sphinx>=8.2.3",
+]
