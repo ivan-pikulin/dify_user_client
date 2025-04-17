@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Models &mdash; dify_user_client 0.0.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=282f96c0"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Language Models" href="llms.html" />
+    <link rel="prev" title="Logging and Chat History" href="logging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            dify_user_client
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Core Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Clients</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#base-client">Base Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#DifyBaseClient"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyBaseClient.__init__"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyBaseClient._login"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient._login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyBaseClient._send_user_request"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient._send_user_request()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#user-client">User Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#DifyUserClient"><code class="docutils literal notranslate"><span class="pre">DifyUserClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.update_timezone"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.update_timezone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.update_system_model"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.update_system_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.apps"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.apps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_app"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_app()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.tool_providers"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.tool_providers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_tool_provider"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_tool_provider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.tools"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.tools</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_tool"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_tool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.model_providers"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.model_providers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_model_provider"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_model_provider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.create_app"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.create_app()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.create_app_from_yaml"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.create_app_from_yaml()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.delete_app"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.delete_app()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#combined-client">Combined Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#DifyClient"><code class="docutils literal notranslate"><span class="pre">DifyClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyClient.__init__"><code class="docutils literal notranslate"><span class="pre">DifyClient.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#Credentials"><code class="docutils literal notranslate"><span class="pre">Credentials</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apps.html">Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#app-types">App Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#advanced-chat-applications">Advanced Chat Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#type-safety">Type Safety</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="knowledge.html">Knowledge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#dataset-management">Dataset Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDataset"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.__init__"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.documents"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.documents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.get_document"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.get_document()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.create_document_by_text"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.create_document_by_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.create_document_by_file"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.create_document_by_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.update_document_from_file"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.update_document_from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.delete_document"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.delete_document()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.delete"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#document">Document</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDocument"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.__init__"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.segments"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.segments</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.create_segments"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.create_segments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.get_segment"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.get_segment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.delete_segment"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.delete_segment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.indexing_status"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.indexing_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.wait_for_indexing"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.wait_for_indexing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.data"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.delete"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#segment">Segment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeSegment"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeSegment.__init__"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeSegment.update"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeSegment.delete"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum.ONLY_ME"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum.ONLY_ME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum.ALL_TEAM"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum.ALL_TEAM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum.PARTIAL_TEAM"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum.PARTIAL_TEAM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.WAITING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.WAITING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.PARSING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.PARSING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.CLEANING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.CLEANING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.SPLITTING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.SPLITTING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.COMPLETED"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.COMPLETED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.INDEXING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.INDEXING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.ERROR"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.ERROR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.PAUSED"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.PAUSED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeToken"><code class="docutils literal notranslate"><span class="pre">KnowledgeToken</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeSegmentSettings"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegmentSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDocumentSegmentSettings"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocumentSegmentSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDocumentData"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocumentData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#hit">Hit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tool-providers">Tool Providers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#ToolProvider"><code class="docutils literal notranslate"><span class="pre">ToolProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#ToolProvider.create"><code class="docutils literal notranslate"><span class="pre">ToolProvider.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#ToolProvider.tool_info"><code class="docutils literal notranslate"><span class="pre">ToolProvider.tool_info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#WorkflowToolProvider"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowToolProvider.info"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProvider.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowToolProvider.tools"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProvider.tools</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#BuiltinToolProvider"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinToolProvider.tools"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider.tools</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinToolProvider.tools_info"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider.tools_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinToolProvider.update_credentials"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider.update_credentials()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#id1">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#Tool"><code class="docutils literal notranslate"><span class="pre">Tool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#Tool.create"><code class="docutils literal notranslate"><span class="pre">Tool.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#Tool.info"><code class="docutils literal notranslate"><span class="pre">Tool.info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#WorkflowTool"><code class="docutils literal notranslate"><span class="pre">WorkflowTool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowTool.workflow_app_id"><code class="docutils literal notranslate"><span class="pre">WorkflowTool.workflow_app_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowTool.info"><code class="docutils literal notranslate"><span class="pre">WorkflowTool.info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#BuiltinTool"><code class="docutils literal notranslate"><span class="pre">BuiltinTool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinTool.info"><code class="docutils literal notranslate"><span class="pre">BuiltinTool.info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#ToolInfo"><code class="docutils literal notranslate"><span class="pre">ToolInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#ToolParameter"><code class="docutils literal notranslate"><span class="pre">ToolParameter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#WorkflowToolProviderInfo"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProviderInfo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging and Chat History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#chat-session">Chat Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#Chat.__init__"><code class="docutils literal notranslate"><span class="pre">Chat.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#app-token">App Token</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#AppToken"><code class="docutils literal notranslate"><span class="pre">AppToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-models">Workflow Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#WorkflowDraft"><code class="docutils literal notranslate"><span class="pre">WorkflowDraft</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#graph-models">Graph Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Graph"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GraphNode"><code class="docutils literal notranslate"><span class="pre">GraphNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GraphEdge"><code class="docutils literal notranslate"><span class="pre">GraphEdge</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GraphEdgeData"><code class="docutils literal notranslate"><span class="pre">GraphEdgeData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GraphNodeData"><code class="docutils literal notranslate"><span class="pre">GraphNodeData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Viewport"><code class="docutils literal notranslate"><span class="pre">Viewport</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="llms.html">Language Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="llms.html#model-provider-management">Model Provider Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#ModelProvider"><code class="docutils literal notranslate"><span class="pre">ModelProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.__init__"><code class="docutils literal notranslate"><span class="pre">ModelProvider.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.info"><code class="docutils literal notranslate"><span class="pre">ModelProvider.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.update_credentials"><code class="docutils literal notranslate"><span class="pre">ModelProvider.update_credentials()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.validate_credentials"><code class="docutils literal notranslate"><span class="pre">ModelProvider.validate_credentials()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.delete"><code class="docutils literal notranslate"><span class="pre">ModelProvider.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llms.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#SupportedModelType"><code class="docutils literal notranslate"><span class="pre">SupportedModelType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.text_embedding"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.text_embedding</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.speech2text"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.speech2text</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.moderation"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.moderation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.tts"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.tts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.llm"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.llm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.rerank"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.rerank</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#ModelProviderInfo"><code class="docutils literal notranslate"><span class="pre">ModelProviderInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#ModelProviderHelp"><code class="docutils literal notranslate"><span class="pre">ModelProviderHelp</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#development-setup">Development Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-style">Code Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">[0.0.5] - 2025-04-17</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#deprecated">Deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#removed">Removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#fixed">Fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#security">Security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dify_user_client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Data Models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-models">
+<h1>Data Models<a class="headerlink" href="#data-models" title="Link to this heading"></a></h1>
+<p>This section describes the data models used in the Dify client.</p>
+<section id="app-token">
+<h2>App Token<a class="headerlink" href="#app-token" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AppToken">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AppToken</span></span><a class="headerlink" href="#AppToken" title="Link to this definition"></a></dt>
+<dd><p>Represents an API token for an application.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">id:</span> <span class="pre">str</span></span></dt>
+<dd><p>Unique identifier for the token</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">type:</span> <span class="pre">Literal[&quot;app&quot;]</span></span></dt>
+<dd><p>Token type, always “app”</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">token:</span> <span class="pre">str</span></span></dt>
+<dd><p>The actual token string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">last_used_at:</span> <span class="pre">Optional[int]</span></span></dt>
+<dd><p>Timestamp of last usage</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">created_at:</span> <span class="pre">int</span></span></dt>
+<dd><p>Timestamp of creation</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="workflow-models">
+<h2>Workflow Models<a class="headerlink" href="#workflow-models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WorkflowDraft">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowDraft</span></span><a class="headerlink" href="#WorkflowDraft" title="Link to this definition"></a></dt>
+<dd><p>Represents a workflow configuration draft.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">graph:</span> <span class="pre">Optional[Graph]</span></span></dt>
+<dd><p>The workflow graph structure</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:</span> <span class="pre">dict</span></span></dt>
+<dd><p>Feature configuration</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">environment_variables:</span> <span class="pre">list</span></span></dt>
+<dd><p>Environment variables used in the workflow</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">conversation_variables:</span> <span class="pre">list</span></span></dt>
+<dd><p>Conversation variables used in the workflow</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="graph-models">
+<h2>Graph Models<a class="headerlink" href="#graph-models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Graph">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Graph</span></span><a class="headerlink" href="#Graph" title="Link to this definition"></a></dt>
+<dd><p>Represents the complete workflow graph structure.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">nodes:</span> <span class="pre">list[GraphNode]</span></span></dt>
+<dd><p>List of nodes in the graph</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">edges:</span> <span class="pre">list[GraphEdge]</span></span></dt>
+<dd><p>List of edges connecting the nodes</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">viewport:</span> <span class="pre">Viewport</span></span></dt>
+<dd><p>View configuration for the graph</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GraphNode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GraphNode</span></span><a class="headerlink" href="#GraphNode" title="Link to this definition"></a></dt>
+<dd><p>Represents a node in the workflow graph.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">id:</span> <span class="pre">str</span></span></dt>
+<dd><p>Unique identifier for the node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">type:</span> <span class="pre">str</span></span></dt>
+<dd><p>Node type</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">data:</span> <span class="pre">dict</span></span></dt>
+<dd><p>Node configuration data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">position:</span> <span class="pre">dict</span></span></dt>
+<dd><p>Node position in the graph</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">targetPosition:</span> <span class="pre">str</span></span></dt>
+<dd><p>Position of target connection point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sourcePosition:</span> <span class="pre">str</span></span></dt>
+<dd><p>Position of source connection point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">positionAbsolute:</span> <span class="pre">dict</span></span></dt>
+<dd><p>Absolute position in the graph</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">width:</span> <span class="pre">int</span></span></dt>
+<dd><p>Node width</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">height:</span> <span class="pre">int</span></span></dt>
+<dd><p>Node height</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GraphEdge">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GraphEdge</span></span><a class="headerlink" href="#GraphEdge" title="Link to this definition"></a></dt>
+<dd><p>Represents an edge connecting two nodes in the workflow graph.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">id:</span> <span class="pre">str</span></span></dt>
+<dd><p>Unique identifier for the edge</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">type:</span> <span class="pre">str</span></span></dt>
+<dd><p>Edge type</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">source:</span> <span class="pre">str</span></span></dt>
+<dd><p>Source node ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sourceHandle:</span> <span class="pre">str</span></span></dt>
+<dd><p>Source connection point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">target:</span> <span class="pre">str</span></span></dt>
+<dd><p>Target node ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">targetHandle:</span> <span class="pre">str</span></span></dt>
+<dd><p>Target connection point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">data:</span> <span class="pre">GraphEdgeData</span></span></dt>
+<dd><p>Edge configuration data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">zIndex:</span> <span class="pre">int</span></span></dt>
+<dd><p>Z-index for rendering</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GraphEdgeData">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GraphEdgeData</span></span><a class="headerlink" href="#GraphEdgeData" title="Link to this definition"></a></dt>
+<dd><p>Configuration data for graph edges.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sourceType:</span> <span class="pre">GraphNodeDataTypes</span></span></dt>
+<dd><p>Type of the source node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">targetType:</span> <span class="pre">GraphNodeDataTypes</span></span></dt>
+<dd><p>Type of the target node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">isInIteration:</span> <span class="pre">bool</span></span></dt>
+<dd><p>Whether the edge is part of an iteration</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GraphNodeData">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GraphNodeData</span></span><a class="headerlink" href="#GraphNodeData" title="Link to this definition"></a></dt>
+<dd><p>Configuration data for graph nodes.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">type:</span> <span class="pre">GraphNodeDataTypes</span></span></dt>
+<dd><p>Node type (start, end, or llm)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">title:</span> <span class="pre">str</span></span></dt>
+<dd><p>Node title</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">description:</span> <span class="pre">str</span></span></dt>
+<dd><p>Node description</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">variables:</span> <span class="pre">list</span></span></dt>
+<dd><p>List of variables used by the node</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Viewport">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Viewport</span></span><a class="headerlink" href="#Viewport" title="Link to this definition"></a></dt>
+<dd><p>Graph view configuration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">x:</span> <span class="pre">Optional[int]</span></span></dt>
+<dd><p>X coordinate of the viewport (default: 0)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">y:</span> <span class="pre">Optional[int]</span></span></dt>
+<dd><p>Y coordinate of the viewport (default: 0)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">zoom:</span> <span class="pre">Optional[int]</span></span></dt>
+<dd><p>Zoom level (default: 1)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="logging.html" class="btn btn-neutral float-left" title="Logging and Chat History" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="llms.html" class="btn btn-neutral float-right" title="Language Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ivan Pikulin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
