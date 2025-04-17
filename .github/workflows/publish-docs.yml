@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Publish Docs
 on:
   push:
     branches: [ master ]
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  publish-docs:
+  publish-to-github-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

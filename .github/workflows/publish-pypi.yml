@@ -10,7 +10,7 @@ permissions:
   packages: write
 
 jobs:
-  publish-pypi-package:
+  publish-to-pypi:
     runs-on: ubuntu-latest
 
     steps:
