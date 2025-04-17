@@ -31,7 +31,7 @@ App Token
       Timestamp of creation
 
 Workflow Models
--------------
+---------------
 
 .. py:class:: WorkflowDraft
 
@@ -54,7 +54,7 @@ Workflow Models
       Conversation variables used in the workflow
 
 Graph Models
------------
+------------
 
 .. py:class:: Graph
 
