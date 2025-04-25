@@ -25,6 +25,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - None
 
+## [0.1.7] - 2024-03-22
+
+### Added
+- Knowledge settings management
+  - Advanced configuration options for knowledge base
+  - Customizable knowledge processing parameters
+  - Enhanced knowledge retrieval settings
+  - Knowledge base permission controls
+
+### Changed
+- Improved knowledge base configuration interface
+- Enhanced documentation for knowledge settings
+
+### Deprecated
+- None
+
+### Removed
+- None
+
+### Fixed
+- None
+
+### Security
+- None
+
 ## [0.1.6] - 2024-03-21
 
 ### Added
