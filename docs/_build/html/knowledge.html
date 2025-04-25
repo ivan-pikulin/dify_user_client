@@ -161,6 +161,16 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#hit">Hit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dataset-settings">Dataset Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings-configuration">Settings Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#retrieval-methods">Retrieval Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permissions">Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#settings-properties">Settings Properties</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a><ul>
@@ -673,6 +683,97 @@
 </section>
 <section id="hit">
 <h2>Hit<a class="headerlink" href="#hit" title="Link to this heading"></a></h2>
+</section>
+<section id="dataset-settings">
+<h2>Dataset Settings<a class="headerlink" href="#dataset-settings" title="Link to this heading"></a></h2>
+<p>The Knowledge Dataset Settings API allows you to manage dataset configurations including retrieval methods, reranking settings, and permissions.</p>
+<section id="basic-usage">
+<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dify_user_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">DifyClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dify_user_client.knowledge</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetPermissionEnum</span><span class="p">,</span> <span class="n">RetrievalMethod</span>
+
+<span class="c1"># Initialize client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">DifyClient</span><span class="p">(</span><span class="s2">&quot;YOUR_API_KEY&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">knowledge</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;dataset_id&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get current settings</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">settings</span>
+
+<span class="c1"># Update settings</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">update_settings</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Updated Dataset&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;New description&quot;</span><span class="p">,</span>
+    <span class="n">permission</span><span class="o">=</span><span class="n">DatasetPermissionEnum</span><span class="o">.</span><span class="n">ALL_TEAM</span><span class="p">,</span>
+    <span class="n">retrieval_model</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;search_method&quot;</span><span class="p">:</span> <span class="n">RetrievalMethod</span><span class="o">.</span><span class="n">HYBRID_SEARCH</span><span class="p">,</span>
+        <span class="s2">&quot;weights&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;vector_setting&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;vector_weight&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">},</span>
+            <span class="s2">&quot;keyword_setting&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;keyword_weight&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="settings-configuration">
+<h3>Settings Configuration<a class="headerlink" href="#settings-configuration" title="Link to this heading"></a></h3>
+<section id="retrieval-methods">
+<h4>Retrieval Methods<a class="headerlink" href="#retrieval-methods" title="Link to this heading"></a></h4>
+<p>The API supports three retrieval methods:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SEMANTIC_SEARCH</span></code>: Uses embeddings for semantic similarity search</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FULL_TEXT_SEARCH</span></code>: Uses keyword-based search</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HYBRID_SEARCH</span></code>: Combines both semantic and keyword search</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure semantic search</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">update_settings</span><span class="p">(</span>
+    <span class="n">retrieval_model</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;search_method&quot;</span><span class="p">:</span> <span class="n">RetrievalMethod</span><span class="o">.</span><span class="n">SEMANTIC_SEARCH</span><span class="p">,</span>
+        <span class="s2">&quot;weights&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;vector_setting&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;vector_weight&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+            <span class="s2">&quot;keyword_setting&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;keyword_weight&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="permissions">
+<h4>Permissions<a class="headerlink" href="#permissions" title="Link to this heading"></a></h4>
+<p>Dataset access can be controlled with the following permission levels:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ONLY_ME</span></code>: Only the creator can access</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALL_TEAM</span></code>: All team members can access</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIAL_TEAM</span></code>: Selected team members can access</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update permissions</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">update_settings</span><span class="p">(</span>
+    <span class="n">permission</span><span class="o">=</span><span class="n">DatasetPermissionEnum</span><span class="o">.</span><span class="n">ALL_TEAM</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="settings-properties">
+<h3>Settings Properties<a class="headerlink" href="#settings-properties" title="Link to this heading"></a></h3>
+<p>The dataset settings object includes the following properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: Dataset identifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Dataset name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Optional dataset description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permission</span></code>: Access permission level</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indexing_technique</span></code>: “high_quality” or “economy”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">retrieval_model_dict</span></code>: Retrieval configuration
+- <code class="docutils literal notranslate"><span class="pre">search_method</span></code>: Search method to use
+- <code class="docutils literal notranslate"><span class="pre">weights</span></code>: Weight configuration for hybrid search
+- <code class="docutils literal notranslate"><span class="pre">top_k</span></code>: Number of results to return
+- <code class="docutils literal notranslate"><span class="pre">score_threshold</span></code>: Minimum score threshold</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">embedding_model</span></code>: Name of the embedding model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">embedding_model_provider</span></code>: Provider of the embedding model</p></li>
+</ul>
+</section>
 </section>
 </section>
 

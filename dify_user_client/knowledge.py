@@ -96,6 +96,78 @@ class KnowledgeDocumentData(BaseModel):
     metadata: dict = Field(default_factory=dict)
 
 
+class RerankingModel(BaseModel):
+    reranking_provider_name: Optional[str]
+    reranking_model_name: Optional[str]
+
+
+class VectorSetting(BaseModel):
+    vector_weight: float
+    embedding_model_name: Optional[str]
+    embedding_provider_name: Optional[str]
+
+
+class KeywordSetting(BaseModel):
+    keyword_weight: float
+
+
+class WeightSettings(BaseModel):
+    weight_type: Optional[str] = "customized"
+    vector_setting: VectorSetting
+    keyword_setting: KeywordSetting
+
+class RetrievalMethod(str, Enum):
+    SEMANTIC_SEARCH = "semantic_search"
+    FULL_TEXT_SEARCH = "full_text_search"
+    HYBRID_SEARCH = "hybrid_search"
+
+class RetrievalModelDict(BaseModel):
+    search_method: RetrievalMethod = RetrievalMethod.SEMANTIC_SEARCH
+    reranking_enable: Optional[bool] = False
+    reranking_mode: Optional[str] = None
+    reranking_model: Optional[RerankingModel] = None
+    weights: Optional[WeightSettings] = None
+    top_k: int
+    score_threshold_enabled: Optional[bool] = False
+    score_threshold: Optional[float] = None
+
+
+class ExternalKnowledgeInfo(BaseModel):
+    external_knowledge_id: Optional[str] = None
+    external_knowledge_api_id: Optional[str] = None
+    external_knowledge_api_name: Optional[str] = None
+    external_knowledge_api_endpoint: Optional[str] = None
+
+
+class ExternalRetrievalModel(BaseModel):
+    top_k: int
+    score_threshold: Optional[float] = None
+    score_threshold_enabled: Optional[bool] = False
+
+
+class KnowledgeDatasetSettings(BaseModel):
+    id: str
+    name: str
+    description: Optional[str] = None
+    provider: str = "vendor"
+    permission: DatasetPermissionEnum = DatasetPermissionEnum.ONLY_ME
+    data_source_type: Optional[str] = None
+    indexing_technique: Literal["high_quality", "economy"] = "high_quality"
+    app_count: int
+    document_count: int
+    word_count: int
+    created_by: str
+    created_at: int
+    updated_by: str
+    updated_at: int
+    embedding_model: Optional[str] = None
+    embedding_model_provider: Optional[str] = None
+    embedding_available: Optional[bool] = None
+    retrieval_model_dict: RetrievalModelDict
+    tags: list[str] = Field(default_factory=list)
+    external_knowledge_info: ExternalKnowledgeInfo = Field(default_factory=ExternalKnowledgeInfo)
+    external_retrieval_model: ExternalRetrievalModel
+
 
 class KnowledgeSegment:
     def __init__(self, id: str, client: 'DifyKnowledgeClient', dataset: 'KnowledgeDataset', document: 'KnowledgeDocument'):
@@ -195,10 +267,19 @@ class KnowledgeDocument:
 
 class KnowledgeDataset:
     def __init__(self, id: str, client: 'DifyKnowledgeClient', info: dict = None):
-
         self.id = id
         self.client = client
         self.info = info or {}
+
+    @property
+    def settings(self) -> KnowledgeDatasetSettings:
+        url = f"{self.client.base_url}/console/api/datasets/{self.id}"
+        response = self.client._send_user_request("GET", url)
+        return KnowledgeDatasetSettings.model_validate(response)
+
+    def update_settings(self, **kwargs):
+        url = f"{self.client.base_url}/console/api/datasets/{self.id}"
+        self.client._send_user_request("PATCH", url, json=kwargs)
 
     @property
     def _documents_mapping(self) -> dict[str, KnowledgeDocument]:

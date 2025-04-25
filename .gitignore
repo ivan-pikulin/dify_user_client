@@ -28,10 +28,10 @@ env/
 # IDE-specific files
 .idea/
 .vscode/
+.cursor
 *.swp
 *.swo
 .DS_Store
-.cursorrules
 
 # Testing
 .coverage

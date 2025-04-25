@@ -202,7 +202,7 @@ wheels = [
 
 [[package]]
 name = "dify-user-client"
-version = "0.0.4"
+version = "0.1.5"
 source = { editable = "." }
 dependencies = [
     { name = "pydantic" },

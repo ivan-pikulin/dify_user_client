@@ -139,7 +139,7 @@ Combined Client
       :ivar knowledge: Instance of :class:`DifyKnowledgeClient` for knowledge operations
 
 Data Models
-----------
+-----------
 
 .. py:class:: Credentials
 

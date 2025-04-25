@@ -31,7 +31,7 @@ Model Provider Management
       Delete the provider.
 
 Data Models
-----------
+-----------
 
 .. py:class:: SupportedModelType(str, Enum)
 

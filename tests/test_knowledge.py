@@ -5,7 +5,10 @@ from dify_user_client.knowledge import (DifyKnowledgeClient, KnowledgeDocumentDa
                                   KnowledgeDocument,
                                   KnowledgeDocumentSegmentSettings,
                                   KnowledgeSegment, KnowledgeSegmentSettings,
-                                  KnowledgeToken)
+                                  KnowledgeToken,
+                                  KnowledgeDatasetSettings,
+                                  DatasetPermissionEnum,
+                                  RetrievalMethod)
 
 
 def test_knowledge_models(client: DifyClient):
@@ -185,3 +188,54 @@ def test_get_document_data(client: DifyClient):
 
     with pytest.raises(ValueError, match=".*not found.*"):
         knowledge.get_dataset(dataset.id)
+
+
+def test_dataset_settings(client: DifyClient):
+    knowledge = client.knowledge
+    try:
+        # Create a dataset with initial settings
+        dataset = knowledge.create_dataset(
+            name="test_dataset_settings",
+            description="Initial description",
+            permission=DatasetPermissionEnum.ONLY_ME,
+            indexing_technique="high_quality"
+        )
+        
+        # Get and verify settings
+        settings = dataset.settings
+        assert isinstance(settings, KnowledgeDatasetSettings)
+        assert settings.name == "test_dataset_settings"
+        assert settings.description == "Initial description"
+        assert settings.permission == DatasetPermissionEnum.ONLY_ME
+        assert settings.indexing_technique == "high_quality"
+        assert settings.retrieval_model_dict.search_method == RetrievalMethod.SEMANTIC_SEARCH
+        
+        # Update settings
+        dataset.update_settings(
+            name="updated_dataset_settings",
+            description="Updated description",
+            permission=DatasetPermissionEnum.ALL_TEAM,
+            retrieval_model={
+                "search_method": RetrievalMethod.HYBRID_SEARCH,
+                "weights": {
+                    "vector_setting": {
+                        "vector_weight": 0.8
+                    },
+                    "keyword_setting": {
+                        "keyword_weight": 0.2
+                    }
+                }
+            }
+        )
+        
+        # Get and verify updated settings
+        updated_settings = dataset.settings
+        assert updated_settings.name == "updated_dataset_settings"
+        assert updated_settings.description == "Updated description"
+        assert updated_settings.permission == DatasetPermissionEnum.ALL_TEAM
+        assert updated_settings.retrieval_model_dict.search_method == RetrievalMethod.HYBRID_SEARCH
+        assert updated_settings.retrieval_model_dict.weights.vector_setting.vector_weight == 0.8
+        assert updated_settings.retrieval_model_dict.weights.keyword_setting.keyword_weight == 0.2
+        
+    finally:
+        dataset.delete()
