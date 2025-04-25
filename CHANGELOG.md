@@ -25,6 +25,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - None
 
+## [0.1.6] - 2024-03-21
+
+### Added
+- Dataset settings management API
+  - Support for retrieving and updating dataset settings
+  - New retrieval methods: semantic search, full text search, and hybrid search
+  - Configurable search weights and parameters
+  - Dataset permission management
+  - Comprehensive test coverage for settings functionality
+
+### Changed
+- Enhanced knowledge dataset API with settings management
+- Improved type hints and validation for dataset settings
+- Updated documentation with dataset settings examples
+
+### Deprecated
+- None
+
+### Removed
+- None
+
+### Fixed
+- None
+
+### Security
+- None
+
 ## [0.0.5] - 2025-04-17
 
 ### Added
