@@ -6,7 +6,8 @@ import yaml
 from .apps import App, AppType, WorkflowDraft
 from .base import Credentials, DifyBaseClient
 from .knowledge import DifyKnowledgeClient
-from .llms import ModelProvider, ModelProviderInfo
+from .llms import ModelProvider
+from .models import ModelProviderInfo
 from .tools import Tool, ToolProvider
 
 # Configure logger

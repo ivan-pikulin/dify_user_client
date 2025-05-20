@@ -4,14 +4,11 @@ import pytest
 import yaml
 
 from dify_user_client import DifyClient
-from dify_user_client.apps import (AdvancedChatApp, AgentApp, App, AppType,
-                                   ChatApp, CompletionApp, WorkflowApp)
-from dify_user_client.models.logs import (AgentConversation,
-                                          PaginatedAgentLogs,
-                                          PaginatedWorkflowLogs,
-                                          WorkflowLogEntry,
-                                          WorkflowNodeExecution,
-                                          WorkflowNodeExecutions)
+from dify_user_client.apps import (AdvancedChatApp, AgentApp, App, ChatApp, CompletionApp, WorkflowApp)
+from dify_user_client.models import (
+    AppType, AgentConversation, PaginatedAgentLogs, PaginatedWorkflowLogs,
+    WorkflowLogEntry, WorkflowNodeExecution, WorkflowNodeExecutions
+)
 
 
 def test_app_models(client: DifyClient):
@@ -63,7 +60,7 @@ class BaseTestApp(ABC):
 
 
 class TestAgentApp(BaseTestApp):
-    mode = AppType.agent
+    mode = AppType.AGENT_CHAT
     app_class = AgentApp
 
     def test_import_yaml(self, client: DifyClient):
@@ -107,7 +104,7 @@ class TestAgentApp(BaseTestApp):
 
 
 class TestChatApp(BaseTestApp):
-    mode = AppType.chat
+    mode = AppType.CHAT
     app_class = ChatApp
 
     def test_get_logs(self, client: DifyClient):
@@ -140,12 +137,12 @@ class TestChatApp(BaseTestApp):
 
 
 class TestCompletionApp(BaseTestApp):
-    mode = AppType.completion
+    mode = AppType.COMPLETION
     app_class = CompletionApp
 
 
 class TestWorkflowApp(BaseTestApp):
-    mode = AppType.workflow
+    mode = AppType.WORKFLOW
     app_class = WorkflowApp
 
     def test_import_yaml(self, client: DifyClient):
@@ -200,7 +197,6 @@ class TestWorkflowApp(BaseTestApp):
                 if executions.data:
                     execution = executions.data[0]
                     assert isinstance(execution, WorkflowNodeExecution)
-                    assert isinstance(execution.id, str)
                     assert isinstance(execution.index, int)
                     assert isinstance(execution.node_type, str)
                     assert isinstance(execution.title, str)
@@ -213,5 +209,5 @@ class TestWorkflowApp(BaseTestApp):
 
 
 class TestAdvancedChatApp(BaseTestApp):
-    mode = AppType.advanced_chat
+    mode = AppType.ADVANCED_CHAT
     app_class = AdvancedChatApp

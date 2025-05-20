@@ -4,6 +4,10 @@ from typing import Literal, Union, Optional, Any
 from pydantic import BaseModel
 
 from .base import DifyBaseClient
+from .models import (
+    ToolInfo, ToolParameter, ToolParameterOption, WorkflowToolProviderInfo,
+    Icon, WorkflowToolParameter
+)
 
 
 class ToolParameterOption(BaseModel):

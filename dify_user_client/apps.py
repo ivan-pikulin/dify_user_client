@@ -7,7 +7,11 @@ import yaml
 
 from .base import DifyBaseClient
 from .tools import WorkflowToolProviderInfo
-from .models.logs import PaginatedWorkflowLogs, PaginatedAgentLogs, WorkflowLogEntry, AgentConversation, WorkflowNodeExecutions
+from .models import (
+    AppType, AppToken, Graph, GraphNode, GraphEdge, GraphNodeData, GraphEdgeData, 
+    Viewport, WorkflowDraft, PaginatedWorkflowLogs, PaginatedAgentLogs, 
+    WorkflowLogEntry, AgentConversation, WorkflowNodeExecutions
+)
 
 
 class AppType(str, Enum):

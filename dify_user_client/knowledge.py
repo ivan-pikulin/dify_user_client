@@ -1,99 +1,14 @@
 import time
 from enum import Enum
-from typing import Literal, Optional
+from typing import Optional
 
 import requests
 from pydantic import BaseModel, Field
 
 from .base import DifyBaseClient
-
-
-class DatasetPermissionEnum(str, Enum):
-    ONLY_ME = "only_me"
-    ALL_TEAM = "all_team_members"
-    PARTIAL_TEAM = "partial_members"
-
-
-class DocumentIndexingStatuses(str, Enum):
-    WAITING = "waiting"
-    PARSING = "parsing"
-    CLEANING = "cleaning"
-    SPLITTING = "splitting"
-    COMPLETED = "completed"
-    INDEXING = "indexing"
-    ERROR = "error"
-    PAUSED = "paused"
-
-class KnowledgeToken(BaseModel):
-    id: str
-    type: Literal["dataset"]
-    token: str
-    last_used_at: Optional[int] = None
-    created_at: int
-
-
-class PreProcessingRule(BaseModel):
-    id: Literal["remove_extra_spaces", "remove_urls_emails"]
-    enabled: bool
-
-
-class Segmentation(BaseModel):
-    separator: Optional[str] = "###"
-    max_tokens: Optional[int] = 500
-
-
-class Rules(BaseModel):
-    pre_processing_rules: list[PreProcessingRule] = []
-    segmentation: Segmentation = Segmentation()
-
-
-class ProcessRule(BaseModel):
-    rules: Rules = Rules()
-    mode: Literal["automatic", "custom"] = "automatic"
-
-
-class KnowledgeSegmentSettings(BaseModel):
-    name: Optional[str] = None
-    indexing_technique: Literal["high_quality", "economy"] = "high_quality"
-    process_rule: ProcessRule = ProcessRule()
-
-
-class KnowledgeDocumentSegmentSettings(BaseModel):
-    content: str = Field(...,
-                         description="Text content / question content, required")
-    answer: Optional[str] = Field(
-        None, description="Answer content, if the mode of the knowledge is Q&A mode, pass the value (optional)")
-    keywords: Optional[list[str]] = Field(
-        None, description="Keywords (optional)")
-
-
-class KnowledgeDocumentData(BaseModel):
-    id: str
-    name: str
-    data_source_type: str
-    data_source_info: dict
-    dataset_process_rule_id: str
-    dataset_process_rule: ProcessRule
-    created_from: str
-    created_by: str
-    created_at: float
-    tokens: int
-    indexing_status: DocumentIndexingStatuses
-    completed_at: Optional[float] = None
-    updated_at: float
-    indexing_latency: Optional[float] = None
-    error: Optional[str] = None
-    enabled: bool
-    disabled_at: Optional[float] = None
-    disabled_by: Optional[str] = None
-    archived: bool
-    segment_count: int
-    average_segment_length: int
-    hit_count: int
-    display_status: Literal["queuing", "paused", "indexing", "error", "available", "disabled", "archived"]
-    doc_form: str
-    doc_language: str
-    metadata: dict = Field(default_factory=dict)
+from .models import (DocumentIndexingStatuses, KnowledgeDatasetSettings,
+                     KnowledgeDocumentData, KnowledgeSegmentSettings,
+                     KnowledgeToken)
 
 
 class RerankingModel(BaseModel):
@@ -145,28 +60,13 @@ class ExternalRetrievalModel(BaseModel):
     score_threshold_enabled: Optional[bool] = False
 
 
-class KnowledgeDatasetSettings(BaseModel):
-    id: str
-    name: str
-    description: Optional[str] = None
-    provider: str = "vendor"
-    permission: DatasetPermissionEnum = DatasetPermissionEnum.ONLY_ME
-    data_source_type: Optional[str] = None
-    indexing_technique: Literal["high_quality", "economy"] = "high_quality"
-    app_count: int
-    document_count: int
-    word_count: int
-    created_by: str
-    created_at: int
-    updated_by: str
-    updated_at: int
-    embedding_model: Optional[str] = None
-    embedding_model_provider: Optional[str] = None
-    embedding_available: Optional[bool] = None
-    retrieval_model_dict: RetrievalModelDict
-    tags: list[str] = Field(default_factory=list)
-    external_knowledge_info: ExternalKnowledgeInfo = Field(default_factory=ExternalKnowledgeInfo)
-    external_retrieval_model: ExternalRetrievalModel
+class KnowledgeDocumentSegmentSettings(BaseModel):
+    content: str = Field(...,
+                         description="Text content / question content, required")
+    answer: Optional[str] = Field(
+        None, description="Answer content, if the mode of the knowledge is Q&A mode, pass the value (optional)")
+    keywords: Optional[list[str]] = Field(
+        None, description="Keywords (optional)")
 
 
 class KnowledgeSegment:

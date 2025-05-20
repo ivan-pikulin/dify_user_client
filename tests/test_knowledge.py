@@ -1,15 +1,19 @@
 import pytest
+import time
 
 from dify_user_client import DifyClient
-from dify_user_client.knowledge import (DifyKnowledgeClient, KnowledgeDocumentData, KnowledgeDataset,
-                                  KnowledgeDocument,
-                                  KnowledgeDocumentSegmentSettings,
-                                  KnowledgeSegment, KnowledgeSegmentSettings,
-                                  KnowledgeToken,
-                                  KnowledgeDatasetSettings,
-                                  DatasetPermissionEnum,
-                                  RetrievalMethod)
+from dify_user_client.knowledge import (
+    DifyKnowledgeClient, KnowledgeDataset, KnowledgeSegment,
+    KnowledgeDocument
+)
+from dify_user_client.models import (
+    DatasetPermissionEnum, KnowledgeDatasetSettings, KnowledgeDocumentData,
+    KnowledgeSegmentSettings, KnowledgeToken, RetrievalMethod,
+    KnowledgeDocumentSegmentSettings
+)
 
+def get_unique_name(prefix: str = "test") -> str:
+    return f"{prefix}_{int(time.time())}"
 
 def test_knowledge_models(client: DifyClient):
     knowledge = client.knowledge
@@ -38,11 +42,13 @@ def test_create_delete_token(client: DifyClient):
 
 def test_create_delete_dataset(client: DifyClient):
     knowledge = client.knowledge
+    dataset = None
     try:
-        dataset = knowledge.create_dataset(name="test_dataset")
+        dataset = knowledge.create_dataset(name=get_unique_name("test_dataset"))
         assert isinstance(dataset, KnowledgeDataset)
     finally:
-        dataset.delete()
+        if dataset:
+            dataset.delete()
 
     with pytest.raises(ValueError, match=".*not found.*"):
         knowledge.get_dataset(dataset.id)
@@ -50,13 +56,14 @@ def test_create_delete_dataset(client: DifyClient):
 
 def test_create_delete_document(client: DifyClient):
     knowledge = client.knowledge
+    dataset = None
     try:
-        dataset = knowledge.create_dataset(name="test_dataset")
+        dataset = knowledge.create_dataset(name=get_unique_name("test_dataset"))
         document = dataset.create_document_by_text(
             text="test_content",
             settings=KnowledgeSegmentSettings(
                 **{
-                    "name": "test_document",
+                    "name": get_unique_name("test_document"),
                     "indexing_technique": "high_quality",
                     "process_rule": {
                         "mode": "automatic",
@@ -82,7 +89,8 @@ def test_create_delete_document(client: DifyClient):
         with pytest.raises(ValueError, match=".*not found.*"):
             dataset.get_document(document.id)
     finally:
-        dataset.delete()
+        if dataset:
+            dataset.delete()
 
     with pytest.raises(ValueError, match=".*not found.*"):
         knowledge.get_dataset(dataset.id)

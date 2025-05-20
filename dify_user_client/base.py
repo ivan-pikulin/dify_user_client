@@ -1,6 +1,5 @@
-
-from pydantic import BaseModel
 import requests
+from .models.base import BaseModel
 
 
 class Credentials(BaseModel):
