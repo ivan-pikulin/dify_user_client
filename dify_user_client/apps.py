@@ -1,12 +1,13 @@
 import warnings
 from enum import Enum
-from typing import Literal, Optional
+from typing import Literal, Optional, Generator
 
 from pydantic import BaseModel
 import yaml
 
 from .base import DifyBaseClient
 from .tools import WorkflowToolProviderInfo
+from .models.logs import PaginatedWorkflowLogs, PaginatedAgentLogs, WorkflowLogEntry, AgentConversation
 
 
 class AppType(str, Enum):
@@ -228,6 +229,20 @@ class WorkflowApp(App):
         response = self.client._send_user_request("GET", url, params=params)
         return WorkflowToolProviderInfo(**response)
 
+    def get_logs(self, page: int = 1, limit: int = 10) -> PaginatedWorkflowLogs:
+        url = f"{self.client.base_url}/console/api/apps/{self.id}/workflow-app-logs?page={page}&limit={limit}"
+        response = self.client._send_user_request("GET", url)
+        return PaginatedWorkflowLogs(**response)
+
+    def iter_logs(self, limit: int = 10) -> Generator[WorkflowLogEntry, None, None]:
+        page = 1
+        while True:
+            response = self.get_logs(page=page, limit=limit)
+            yield from response.data
+            if not response.has_more:
+                break
+            page += 1
+
 
 class AgentApp(App):
     type = AppType.agent
@@ -238,6 +253,20 @@ class AgentApp(App):
         self.client._send_user_request("POST", url, json=yaml_dict["model_config"])
         self.update_info(yaml_dict["app"])
         return self.id
+
+    def get_logs(self, page: int = 1, limit: int = 10) -> PaginatedAgentLogs:
+        url = f"{self.client.base_url}/console/api/apps/{self.id}/chat-conversations?page={page}&limit={limit}"
+        response = self.client._send_user_request("GET", url)
+        return PaginatedAgentLogs(**response)
+
+    def iter_logs(self, limit: int = 10) -> Generator[AgentConversation, None, None]:
+        page = 1
+        while True:
+            response = self.get_logs(page=page, limit=limit)
+            yield from response.data
+            if not response.has_more:
+                break
+            page += 1
 
 
 class ChatApp(App):

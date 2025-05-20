@@ -4,8 +4,12 @@ import pytest
 import yaml
 
 from dify_user_client import DifyClient
-from dify_user_client.apps import (AdvancedChatApp, AgentApp, App, AppType, ChatApp,
-                             CompletionApp, WorkflowApp)
+from dify_user_client.apps import (AdvancedChatApp, AgentApp, App, AppType,
+                                   ChatApp, CompletionApp, WorkflowApp)
+from dify_user_client.models.logs import (AgentConversation,
+                                          PaginatedAgentLogs,
+                                          PaginatedWorkflowLogs,
+                                          WorkflowLogEntry)
 
 
 def test_app_models(client: DifyClient):
@@ -71,6 +75,34 @@ class TestAgentApp(BaseTestApp):
         finally:
             agent_app.delete()
 
+    def test_get_logs(self, client: DifyClient):
+        app = client.create_app(name=f"test-{self.mode}-app", mode=self.mode)
+        try:
+            logs = app.get_logs(page=1, limit=10)
+            assert isinstance(logs, PaginatedAgentLogs)
+            assert isinstance(logs.page, int)
+            assert isinstance(logs.limit, int)
+            assert isinstance(logs.total, int)
+            assert isinstance(logs.has_more, bool)
+            assert isinstance(logs.data, list)
+            
+            if logs.data:
+                assert isinstance(logs.data[0], AgentConversation)
+        finally:
+            app.delete()
+
+    def test_iter_logs(self, client: DifyClient):
+        app = client.create_app(name=f"test-{self.mode}-app", mode=self.mode)
+        try:
+            logs_count = 0
+            for log in app.iter_logs(limit=10):
+                assert isinstance(log, AgentConversation)
+                logs_count += 1
+                if logs_count >= 15:  # Test at least a few pages
+                    break
+        finally:
+            app.delete()
+
 
 class TestChatApp(BaseTestApp):
     mode = AppType.chat
@@ -95,6 +127,34 @@ class TestWorkflowApp(BaseTestApp):
             assert isinstance(workflow_app, self.app_class)
         finally:
             workflow_app.delete()
+
+    def test_get_logs(self, client: DifyClient):
+        app = client.create_app(name=f"test-{self.mode}-app", mode=self.mode)
+        try:
+            logs = app.get_logs(page=1, limit=10)
+            assert isinstance(logs, PaginatedWorkflowLogs)
+            assert isinstance(logs.page, int)
+            assert isinstance(logs.limit, int)
+            assert isinstance(logs.total, int)
+            assert isinstance(logs.has_more, bool)
+            assert isinstance(logs.data, list)
+            
+            if logs.data:
+                assert isinstance(logs.data[0], WorkflowLogEntry)
+        finally:
+            app.delete()
+
+    def test_iter_logs(self, client: DifyClient):
+        app = client.create_app(name=f"test-{self.mode}-app", mode=self.mode)
+        try:
+            logs_count = 0
+            for log in app.iter_logs(limit=10):
+                assert isinstance(log, WorkflowLogEntry)
+                logs_count += 1
+                if logs_count >= 15:  # Test at least a few pages
+                    break
+        finally:
+            app.delete()
 
 
 class TestAdvancedChatApp(BaseTestApp):
