@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, List, Any, Union
 from pydantic import BaseModel
 
 from .pagination import PaginatedResponse
@@ -53,4 +53,39 @@ class PaginatedWorkflowLogs(PaginatedResponse[WorkflowLogEntry]):
 
 
 class PaginatedAgentLogs(PaginatedResponse[AgentConversation]):
-    pass 
+    pass
+
+
+class WorkflowNodeExecutionMetadata(BaseModel):
+    parallel_id: Optional[str] = None
+    parallel_start_node_id: Optional[str] = None
+    tool_info: Optional[Dict[str, Any]] = None
+    total_tokens: Optional[int] = None
+    total_price: Optional[str] = None
+    currency: Optional[str] = None
+
+
+class WorkflowNodeExecution(BaseModel):
+    id: str
+    index: int
+    predecessor_node_id: Optional[str]
+    node_id: str
+    node_type: str
+    title: str
+    inputs: Optional[Dict[str, Any]]
+    process_data: Optional[Dict[str, Any]]
+    outputs: Optional[Dict[str, Any]]
+    status: str
+    error: Optional[str]
+    elapsed_time: float
+    execution_metadata: Optional[WorkflowNodeExecutionMetadata]
+    extras: Dict[str, Any]
+    created_at: int
+    created_by_role: str
+    created_by_account: Optional[Dict[str, Any]]
+    created_by_end_user: Dict[str, Any]
+    finished_at: int
+
+
+class WorkflowNodeExecutions(BaseModel):
+    data: List[WorkflowNodeExecution] 

@@ -9,7 +9,9 @@ from dify_user_client.apps import (AdvancedChatApp, AgentApp, App, AppType,
 from dify_user_client.models.logs import (AgentConversation,
                                           PaginatedAgentLogs,
                                           PaginatedWorkflowLogs,
-                                          WorkflowLogEntry)
+                                          WorkflowLogEntry,
+                                          WorkflowNodeExecution,
+                                          WorkflowNodeExecutions)
 
 
 def test_app_models(client: DifyClient):
@@ -181,6 +183,31 @@ class TestWorkflowApp(BaseTestApp):
                 logs_count += 1
                 if logs_count >= 15:  # Test at least a few pages
                     break
+        finally:
+            app.delete()
+
+    def test_get_node_executions(self, client: DifyClient):
+        app = client.create_app(name=f"test-{self.mode}-app", mode=self.mode)
+        try:
+            # First, we need to get a workflow run ID from logs
+            logs = app.get_logs(page=1, limit=1)
+            if logs.data:
+                workflow_run_id = logs.data[0].workflow_run.id
+                executions = app.get_node_executions(workflow_run_id)
+                assert isinstance(executions, WorkflowNodeExecutions)
+                assert isinstance(executions.data, list)
+                
+                if executions.data:
+                    execution = executions.data[0]
+                    assert isinstance(execution, WorkflowNodeExecution)
+                    assert isinstance(execution.id, str)
+                    assert isinstance(execution.index, int)
+                    assert isinstance(execution.node_type, str)
+                    assert isinstance(execution.title, str)
+                    assert isinstance(execution.status, str)
+                    assert isinstance(execution.elapsed_time, float)
+                    assert isinstance(execution.created_at, int)
+                    assert isinstance(execution.finished_at, int)
         finally:
             app.delete()
 

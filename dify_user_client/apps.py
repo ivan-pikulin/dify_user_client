@@ -7,7 +7,7 @@ import yaml
 
 from .base import DifyBaseClient
 from .tools import WorkflowToolProviderInfo
-from .models.logs import PaginatedWorkflowLogs, PaginatedAgentLogs, WorkflowLogEntry, AgentConversation
+from .models.logs import PaginatedWorkflowLogs, PaginatedAgentLogs, WorkflowLogEntry, AgentConversation, WorkflowNodeExecutions
 
 
 class AppType(str, Enum):
@@ -242,6 +242,12 @@ class WorkflowApp(App):
             if not response.has_more:
                 break
             page += 1
+
+    def get_node_executions(self, workflow_run_id: str) -> WorkflowNodeExecutions:
+        """Get node executions for a specific workflow run."""
+        url = f"{self.client.base_url}/console/api/apps/{self.id}/workflow-runs/{workflow_run_id}/node-executions"
+        response = self.client._send_user_request("GET", url)
+        return WorkflowNodeExecutions(**response)
 
 
 class AgentApp(App):
