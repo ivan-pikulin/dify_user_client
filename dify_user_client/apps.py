@@ -272,6 +272,20 @@ class AgentApp(App):
 class ChatApp(App):
     type = AppType.chat
 
+    def get_logs(self, page: int = 1, limit: int = 10) -> PaginatedAgentLogs:
+        url = f"{self.client.base_url}/console/api/apps/{self.id}/chat-conversations?page={page}&limit={limit}"
+        response = self.client._send_user_request("GET", url)
+        return PaginatedAgentLogs(**response)
+
+    def iter_logs(self, limit: int = 10) -> Generator[AgentConversation, None, None]:
+        page = 1
+        while True:
+            response = self.get_logs(page=page, limit=limit)
+            yield from response.data
+            if not response.has_more:
+                break
+            page += 1
+
 
 class CompletionApp(App):
     type = AppType.completion
