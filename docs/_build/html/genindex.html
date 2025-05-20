@@ -216,10 +216,44 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="logging.html">Logging and Chat History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#quick-examples">Quick Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.html#chat-session">Chat Session</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="logging.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#Chat.__init__"><code class="docutils literal notranslate"><span class="pre">Chat.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#workflow-logging">Workflow Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowLogEntry"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.id"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.workflow_run"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.workflow_run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowRun"><code class="docutils literal notranslate"><span class="pre">WorkflowRun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.id"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.status"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.elapsed_time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#workflow-node-executions">Workflow Node Executions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecution"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.node_type"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.title"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.status"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.error"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.inputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.outputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.outputs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -339,6 +373,7 @@
  | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
@@ -418,10 +453,10 @@
         <li><a href="tools.html#ToolProvider.create">(ToolProvider class method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clients.html#DifyUserClient.create_app">create_app() (DifyUserClient method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clients.html#DifyUserClient.create_app_from_yaml">create_app_from_yaml() (DifyUserClient method)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDataset.create_document_by_file">create_document_by_file() (KnowledgeDataset method)</a>
@@ -429,6 +464,8 @@
       <li><a href="knowledge.html#KnowledgeDataset.create_document_by_text">create_document_by_text() (KnowledgeDataset method)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDocument.create_segments">create_segments() (KnowledgeDocument method)</a>
+</li>
+      <li><a href="logging.html#WorkflowLogEntry.created_at">created_at (WorkflowLogEntry attribute)</a>
 </li>
       <li><a href="clients.html#Credentials">Credentials (built-in class)</a>
 </li>
@@ -439,7 +476,11 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#KnowledgeDocument.data">data (KnowledgeDocument property)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowNodeExecutions.data">(WorkflowNodeExecutions attribute)</a>
 </li>
+      </ul></li>
       <li><a href="knowledge.html#DatasetPermissionEnum">DatasetPermissionEnum (built-in class)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDataset.delete">delete() (KnowledgeDataset method)</a>
@@ -452,10 +493,10 @@
         <li><a href="llms.html#ModelProvider.delete">(ModelProvider method)</a>
 </li>
       </ul></li>
-      <li><a href="clients.html#DifyUserClient.delete_app">delete_app() (DifyUserClient method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="clients.html#DifyUserClient.delete_app">delete_app() (DifyUserClient method)</a>
+</li>
       <li><a href="knowledge.html#KnowledgeDataset.delete_document">delete_document() (KnowledgeDataset method)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDocument.delete_segment">delete_segment() (KnowledgeDocument method)</a>
@@ -476,7 +517,17 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowNodeExecution.elapsed_time">elapsed_time (WorkflowNodeExecution attribute)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowRun.elapsed_time">(WorkflowRun attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#DocumentIndexingStatuses.ERROR">ERROR (DocumentIndexingStatuses attribute)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecution.error">error (WorkflowNodeExecution attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -514,10 +565,20 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowLogEntry.id">id (WorkflowLogEntry attribute)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowNodeExecution.id">(WorkflowNodeExecution attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowRun.id">(WorkflowRun attribute)</a>
+</li>
+      </ul></li>
       <li><a href="knowledge.html#DocumentIndexingStatuses.INDEXING">INDEXING (DocumentIndexingStatuses attribute)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDocument.indexing_status">indexing_status (KnowledgeDocument property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#BuiltinTool.info">info (BuiltinTool property)</a>
 
       <ul>
@@ -530,6 +591,8 @@
         <li><a href="tools.html#WorkflowToolProvider.info">(WorkflowToolProvider property)</a>
 </li>
       </ul></li>
+      <li><a href="logging.html#WorkflowNodeExecution.inputs">inputs (WorkflowNodeExecution attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -583,10 +646,22 @@
   </ul></td>
 </tr></table>
 
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowNodeExecution.node_type">node_type (WorkflowNodeExecution attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#DatasetPermissionEnum.ONLY_ME">ONLY_ME (DatasetPermissionEnum attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowNodeExecution.outputs">outputs (WorkflowNodeExecution attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -620,10 +695,16 @@
 </li>
       <li><a href="llms.html#SupportedModelType.speech2text">speech2text (SupportedModelType attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#DocumentIndexingStatuses.SPLITTING">SPLITTING (DocumentIndexingStatuses attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowNodeExecution.status">status (WorkflowNodeExecution attribute)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowRun.status">(WorkflowRun attribute)</a>
+</li>
+      </ul></li>
       <li><a href="llms.html#SupportedModelType">SupportedModelType (built-in class)</a>
 </li>
   </ul></td>
@@ -634,6 +715,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="llms.html#SupportedModelType.text_embedding">text_embedding (SupportedModelType attribute)</a>
 </li>
+      <li><a href="logging.html#WorkflowNodeExecution.title">title (WorkflowNodeExecution attribute)</a>
+</li>
       <li><a href="tools.html#Tool">Tool (built-in class)</a>
 </li>
       <li><a href="tools.html#ToolProvider.tool_info">tool_info (ToolProvider property)</a>
@@ -642,10 +725,10 @@
 </li>
       <li><a href="tools.html#ToolInfo">ToolInfo (built-in class)</a>
 </li>
-      <li><a href="tools.html#ToolParameter">ToolParameter (built-in class)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="tools.html#ToolParameter">ToolParameter (built-in class)</a>
+</li>
       <li><a href="tools.html#ToolProvider">ToolProvider (built-in class)</a>
 </li>
       <li><a href="tools.html#BuiltinToolProvider.tools">tools (BuiltinToolProvider property)</a>
@@ -706,9 +789,19 @@
 </li>
       <li><a href="tools.html#WorkflowTool.workflow_app_id">workflow_app_id (WorkflowTool property)</a>
 </li>
+      <li><a href="logging.html#WorkflowLogEntry.workflow_run">workflow_run (WorkflowLogEntry attribute)</a>
+</li>
+      <li><a href="models.html#WorkflowDraft">WorkflowDraft (built-in class)</a>
+</li>
+      <li><a href="logging.html#WorkflowLogEntry">WorkflowLogEntry (built-in class)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="models.html#WorkflowDraft">WorkflowDraft (built-in class)</a>
+      <li><a href="logging.html#WorkflowNodeExecution">WorkflowNodeExecution (built-in class)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecutions">WorkflowNodeExecutions (built-in class)</a>
+</li>
+      <li><a href="logging.html#WorkflowRun">WorkflowRun (built-in class)</a>
 </li>
       <li><a href="tools.html#WorkflowTool">WorkflowTool (built-in class)</a>
 </li>

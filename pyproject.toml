@@ -12,6 +12,7 @@ dependencies = [
     "pydantic>=2.11.3",
     "pyyaml>=6.0.2",
     "requests>=2.32.3",
+    "sphinx-rtd-theme>=3.0.2",
 ]
 
 [project.urls]

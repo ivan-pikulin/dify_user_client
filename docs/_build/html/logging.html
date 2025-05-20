@@ -161,6 +161,16 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="knowledge.html#hit">Hit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#dataset-settings">Dataset Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#settings-configuration">Settings Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#retrieval-methods">Retrieval Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#permissions">Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#settings-properties">Settings Properties</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a><ul>
@@ -209,10 +219,44 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Logging and Chat History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-examples">Quick Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chat-session">Chat Session</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#Chat.__init__"><code class="docutils literal notranslate"><span class="pre">Chat.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-logging">Workflow Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#WorkflowLogEntry"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.id"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.workflow_run"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.workflow_run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#WorkflowRun"><code class="docutils literal notranslate"><span class="pre">WorkflowRun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.id"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.status"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.elapsed_time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-node-executions">Workflow Node Executions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#WorkflowNodeExecution"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.node_type"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.title"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.status"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.error"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.inputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.outputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.outputs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -320,7 +364,31 @@
              
   <section id="logging-and-chat-history">
 <h1>Logging and Chat History<a class="headerlink" href="#logging-and-chat-history" title="Link to this heading"></a></h1>
-<p>This section describes the logging and chat history functionality in the Dify client.</p>
+<p>The Dify client provides comprehensive logging functionality for both workflow and chat applications.</p>
+<section id="quick-examples">
+<h2>Quick Examples<a class="headerlink" href="#quick-examples" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get workflow logs</span>
+<span class="n">workflow_app</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_app</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s2">&quot;your-workflow-app-id&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get paginated logs</span>
+<span class="n">logs</span> <span class="o">=</span> <span class="n">workflow_app</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">logs</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Workflow run </span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">workflow_run</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">workflow_run</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Iterate through all logs</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">workflow_app</span><span class="o">.</span><span class="n">iter_logs</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Log entry </span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> created at </span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get workflow node executions</span>
+<span class="n">workflow_run_id</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">workflow_run</span><span class="o">.</span><span class="n">id</span>
+<span class="n">executions</span> <span class="o">=</span> <span class="n">workflow_app</span><span class="o">.</span><span class="n">get_node_executions</span><span class="p">(</span><span class="n">workflow_run_id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">executions</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="chat-session">
 <h2>Chat Session<a class="headerlink" href="#chat-session" title="Link to this heading"></a></h2>
 <dl class="py class">
@@ -356,6 +424,126 @@ Returns a list of message dictionaries.</p>
 <dd class="field-even"><p>List of message dictionaries containing conversation history</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="workflow-logging">
+<h2>Workflow Logging<a class="headerlink" href="#workflow-logging" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WorkflowLogEntry">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowLogEntry</span></span><a class="headerlink" href="#WorkflowLogEntry" title="Link to this definition"></a></dt>
+<dd><p>Represents a single workflow execution log entry.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowLogEntry.id" title="Link to this definition"></a></dt>
+<dd><p>Unique identifier for the log entry.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.workflow_run">
+<span class="sig-name descname"><span class="pre">workflow_run</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#WorkflowRun" title="WorkflowRun"><span class="pre">WorkflowRun</span></a></em><a class="headerlink" href="#WorkflowLogEntry.workflow_run" title="Link to this definition"></a></dt>
+<dd><p>Details about the workflow run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowLogEntry.created_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the log entry was created.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WorkflowRun">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowRun</span></span><a class="headerlink" href="#WorkflowRun" title="Link to this definition"></a></dt>
+<dd><p>Contains information about a specific workflow run.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.id" title="Link to this definition"></a></dt>
+<dd><p>Unique identifier for the workflow run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.status" title="Link to this definition"></a></dt>
+<dd><p>Current status of the workflow run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.elapsed_time">
+<span class="sig-name descname"><span class="pre">elapsed_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#WorkflowRun.elapsed_time" title="Link to this definition"></a></dt>
+<dd><p>Time taken to execute the workflow.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="workflow-node-executions">
+<h2>Workflow Node Executions<a class="headerlink" href="#workflow-node-executions" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WorkflowNodeExecution">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowNodeExecution</span></span><a class="headerlink" href="#WorkflowNodeExecution" title="Link to this definition"></a></dt>
+<dd><p>Represents the execution of a single node in a workflow.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.id" title="Link to this definition"></a></dt>
+<dd><p>Unique identifier for the node execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.node_type">
+<span class="sig-name descname"><span class="pre">node_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.node_type" title="Link to this definition"></a></dt>
+<dd><p>Type of the workflow node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.title" title="Link to this definition"></a></dt>
+<dd><p>Title of the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.status" title="Link to this definition"></a></dt>
+<dd><p>Execution status of the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.error">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.error" title="Link to this definition"></a></dt>
+<dd><p>Error message if the node execution failed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.elapsed_time">
+<span class="sig-name descname"><span class="pre">elapsed_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.elapsed_time" title="Link to this definition"></a></dt>
+<dd><p>Time taken to execute the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.inputs">
+<span class="sig-name descname"><span class="pre">inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.inputs" title="Link to this definition"></a></dt>
+<dd><p>Input parameters provided to the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.outputs">
+<span class="sig-name descname"><span class="pre">outputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.outputs" title="Link to this definition"></a></dt>
+<dd><p>Output values produced by the node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WorkflowNodeExecutions">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowNodeExecutions</span></span><a class="headerlink" href="#WorkflowNodeExecutions" title="Link to this definition"></a></dt>
+<dd><p>Container for a list of node executions.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutions.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#WorkflowNodeExecution" title="WorkflowNodeExecution"><span class="pre">WorkflowNodeExecution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#WorkflowNodeExecutions.data" title="Link to this definition"></a></dt>
+<dd><p>List of node executions.</p>
 </dd></dl>
 
 </dd></dl>
