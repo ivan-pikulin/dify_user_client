@@ -25,7 +25,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - None
 
-## [0.1.7] - 2024-03-22
+## [0.2.0] - 2025-04-06
+
+### Added
+- Logs management
+
+### Changed
+- None
+
+### Deprecated
+- None
+
+### Removed
+- None
+
+### Fixed
+- None
+
+### Security
+- None
+
+## [0.1.7] - 2025-03-22
 
 ### Added
 - Knowledge settings management
@@ -50,7 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - None
 
-## [0.1.6] - 2024-03-21
+## [0.1.6] - 2025-03-21
 
 ### Added
 - Dataset settings management API
