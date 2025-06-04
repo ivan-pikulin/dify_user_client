@@ -4,7 +4,7 @@ from .workflow import (
     WorkflowRun, WorkflowLogEntry, WorkflowNodeExecution, WorkflowNodeExecutions,
     PaginatedWorkflowLogs, WorkflowStatus
 )
-from .agent import AgentConversation, AgentStatus, PaginatedAgentLogs
+from .logs import AgentConversation, PaginatedAgentLogs
 from .app import AppToken, AppType, Graph, GraphNode, GraphEdge, GraphNodeData, GraphEdgeData, Viewport, WorkflowDraft
 from .knowledge import (
     KnowledgeToken, KnowledgeDatasetSettings, KnowledgeDocumentData, KnowledgeSegmentSettings,
@@ -26,7 +26,6 @@ __all__ = [
     'PaginatedWorkflowLogs',
     'WorkflowStatus',
     'AgentConversation',
-    'AgentStatus',
     'PaginatedAgentLogs',
     'AppToken',
     'AppType',
