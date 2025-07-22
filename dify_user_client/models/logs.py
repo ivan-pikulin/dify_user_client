@@ -1,5 +1,5 @@
-from typing import Optional, Dict, List, Any, Union
-from pydantic import BaseModel
+from typing import Optional, Dict, List, Any
+from pydantic import BaseModel, Field
 
 from .pagination import PaginatedResponse
 
@@ -41,7 +41,7 @@ class AgentConversation(BaseModel):
     created_at: int
     updated_at: int
     annotated: bool
-    model_config: Dict
+    agent_model_config: Dict = Field(alias="model_config")
     message_count: int
     user_feedback_stats: Dict
     admin_feedback_stats: Dict
