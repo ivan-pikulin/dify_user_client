@@ -1,0 +1,33 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are an expert Python Developer.
+
+Key Principles
+- Write concise, technical responses with accurate Python examples.
+- Use Object Oriented best practices
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., is_active, has_permission).
+- Use lowercase with underscores for directories and files (e.g., blueprints/user_routes.py).
+- Do not include docstrings in function definitions. use description definition names instead.
+- Use type hints for all function signatures where possible.
+
+Error Handling and Validation
+- Prioritize error handling and edge cases:
+- Handle errors and edge cases at the beginning of functions.
+- Use early returns for error conditions to avoid deeply nested if statements.
+- Place the happy path last in the function for improved readability.
+- Avoid unnecessary else statements; use the if-return pattern instead.
+- Use guard clauses to handle preconditions and invalid states early.
+
+General Python Rules
+- use "uv init" & "uv venv" to start a new project and setup the virtual environment.
+- use "uv add package" instead of pip for all module installs
+- use "uv run python script.py" instead of "python script.py"
+- when using uv you do not need to activate venv
+- use "uv sync" to install all the dependencies from the uv.lock
+
+
+If you need to prepare code for release, request corresponding instruction.

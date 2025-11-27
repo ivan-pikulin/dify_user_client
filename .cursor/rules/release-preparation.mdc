@@ -1,0 +1,33 @@
+---
+description: Use when user asks to prepare for release
+globs: 
+alwaysApply: false
+---
+## Release Process Instructions
+### Version Management
+1. Update version number in [pyproject.toml](mdc:pyproject.toml):
+   - Ask the user about the version: new major, minor, patch
+   - Follow semantic versioning (MAJOR.MINOR.PATCH)
+   - Ensure version number matches planned release
+2. Update [CHANGELOG.md](mdc:CHANGELOG.md):
+   - Add section for new version
+   - Document all significant changes
+   - Include any breaking changes
+   - Add contributor acknowledgments
+
+### Release Commits
+1. Create release commit:
+   ```powershell
+   git add pyproject.toml CHANGELOG.md
+   git commit -m "vX.X.X"
+   ```
+
+### Release Tagging
+1. Create and push git tag:
+    ```powershell
+    git tag -a vX.X.X -m "vX.X.X"
+    ```
+
+Note: Replace X.X.X with the actual version number throughout these steps. 
+
+
