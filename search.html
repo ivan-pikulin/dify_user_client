@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search &mdash; dify_user_client 0.0.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+    
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=282f96c0"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            dify_user_client
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Core Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Clients</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#base-client">Base Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#DifyBaseClient"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyBaseClient.__init__"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyBaseClient._login"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient._login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyBaseClient._send_user_request"><code class="docutils literal notranslate"><span class="pre">DifyBaseClient._send_user_request()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#user-client">User Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#DifyUserClient"><code class="docutils literal notranslate"><span class="pre">DifyUserClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.update_timezone"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.update_timezone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.update_system_model"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.update_system_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.apps"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.apps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_app"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_app()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.tool_providers"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.tool_providers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_tool_provider"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_tool_provider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.tools"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.tools</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_tool"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_tool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.model_providers"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.model_providers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.get_model_provider"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.get_model_provider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.create_app"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.create_app()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.create_app_from_yaml"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.create_app_from_yaml()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyUserClient.delete_app"><code class="docutils literal notranslate"><span class="pre">DifyUserClient.delete_app()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#combined-client">Combined Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#DifyClient"><code class="docutils literal notranslate"><span class="pre">DifyClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clients.html#DifyClient.__init__"><code class="docutils literal notranslate"><span class="pre">DifyClient.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="clients.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clients.html#Credentials"><code class="docutils literal notranslate"><span class="pre">Credentials</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apps.html">Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#app-types">App Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#App.create"><code class="docutils literal notranslate"><span class="pre">App.create()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.id"><code class="docutils literal notranslate"><span class="pre">Chat.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.app"><code class="docutils literal notranslate"><span class="pre">Chat.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.client"><code class="docutils literal notranslate"><span class="pre">Chat.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.info"><code class="docutils literal notranslate"><span class="pre">Chat.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_node_executions"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_node_executions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_messages"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_messages()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-applications">Chat Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.get_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.iter_logs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#completion-applications">Completion Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#advanced-chat-applications">Advanced Chat Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#type-safety">Type Safety</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="knowledge.html">Knowledge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#dataset-management">Dataset Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDataset"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.__init__"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.documents"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.documents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.get_document"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.get_document()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.create_document_by_text"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.create_document_by_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.create_document_by_file"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.create_document_by_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.update_document_from_file"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.update_document_from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.delete_document"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.delete_document()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDataset.delete"><code class="docutils literal notranslate"><span class="pre">KnowledgeDataset.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#document">Document</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDocument"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.__init__"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.segments"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.segments</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.create_segments"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.create_segments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.get_segment"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.get_segment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.delete_segment"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.delete_segment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.indexing_status"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.indexing_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.wait_for_indexing"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.wait_for_indexing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.data"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeDocument.delete"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocument.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#segment">Segment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeSegment"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeSegment.__init__"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeSegment.update"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#KnowledgeSegment.delete"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegment.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum.ONLY_ME"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum.ONLY_ME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum.ALL_TEAM"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum.ALL_TEAM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DatasetPermissionEnum.PARTIAL_TEAM"><code class="docutils literal notranslate"><span class="pre">DatasetPermissionEnum.PARTIAL_TEAM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.WAITING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.WAITING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.PARSING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.PARSING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.CLEANING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.CLEANING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.SPLITTING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.SPLITTING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.COMPLETED"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.COMPLETED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.INDEXING"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.INDEXING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.ERROR"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.ERROR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#DocumentIndexingStatuses.PAUSED"><code class="docutils literal notranslate"><span class="pre">DocumentIndexingStatuses.PAUSED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeToken"><code class="docutils literal notranslate"><span class="pre">KnowledgeToken</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeSegmentSettings"><code class="docutils literal notranslate"><span class="pre">KnowledgeSegmentSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDocumentSegmentSettings"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocumentSegmentSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#KnowledgeDocumentData"><code class="docutils literal notranslate"><span class="pre">KnowledgeDocumentData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#hit">Hit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledge.html#dataset-settings">Dataset Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#settings-configuration">Settings Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#retrieval-methods">Retrieval Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="knowledge.html#permissions">Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge.html#settings-properties">Settings Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tool-providers">Tool Providers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#ToolProvider"><code class="docutils literal notranslate"><span class="pre">ToolProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#ToolProvider.create"><code class="docutils literal notranslate"><span class="pre">ToolProvider.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#ToolProvider.tool_info"><code class="docutils literal notranslate"><span class="pre">ToolProvider.tool_info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#WorkflowToolProvider"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowToolProvider.info"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProvider.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowToolProvider.tools"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProvider.tools</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#BuiltinToolProvider"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinToolProvider.tools"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider.tools</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinToolProvider.tools_info"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider.tools_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinToolProvider.update_credentials"><code class="docutils literal notranslate"><span class="pre">BuiltinToolProvider.update_credentials()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#id1">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#Tool"><code class="docutils literal notranslate"><span class="pre">Tool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#Tool.create"><code class="docutils literal notranslate"><span class="pre">Tool.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#Tool.info"><code class="docutils literal notranslate"><span class="pre">Tool.info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#WorkflowTool"><code class="docutils literal notranslate"><span class="pre">WorkflowTool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowTool.workflow_app_id"><code class="docutils literal notranslate"><span class="pre">WorkflowTool.workflow_app_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#WorkflowTool.info"><code class="docutils literal notranslate"><span class="pre">WorkflowTool.info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#BuiltinTool"><code class="docutils literal notranslate"><span class="pre">BuiltinTool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tools.html#BuiltinTool.info"><code class="docutils literal notranslate"><span class="pre">BuiltinTool.info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#ToolInfo"><code class="docutils literal notranslate"><span class="pre">ToolInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#ToolParameter"><code class="docutils literal notranslate"><span class="pre">ToolParameter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html#WorkflowToolProviderInfo"><code class="docutils literal notranslate"><span class="pre">WorkflowToolProviderInfo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging and Chat History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#quick-examples">Quick Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#chat-session">Chat Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#Chat.__init__"><code class="docutils literal notranslate"><span class="pre">Chat.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#workflow-logging">Workflow Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowLogEntry"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.id"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.workflow_run"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.workflow_run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_from"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_from</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowRun"><code class="docutils literal notranslate"><span class="pre">WorkflowRun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.id"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.version"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.status"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.error"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.total_steps"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.finished_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.exceptions_count"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.exceptions_count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#workflow-node-executions">Workflow Node Executions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecution"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.node_type"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.title"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.status"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.error"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.inputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.outputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.outputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.process_data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.process_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.index"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.predecessor_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.predecessor_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.execution_metadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.execution_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.extras"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.extras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.finished_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#agent-and-chat-logging">Agent and Chat Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#chat-messages">Chat Messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Data Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#app-token">App Token</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#AppToken"><code class="docutils literal notranslate"><span class="pre">AppToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#workflow-models">Workflow Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowDraft"><code class="docutils literal notranslate"><span class="pre">WorkflowDraft</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#graph-models">Graph Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#Graph"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#GraphNode"><code class="docutils literal notranslate"><span class="pre">GraphNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#GraphEdge"><code class="docutils literal notranslate"><span class="pre">GraphEdge</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#GraphEdgeData"><code class="docutils literal notranslate"><span class="pre">GraphEdgeData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#GraphNodeData"><code class="docutils literal notranslate"><span class="pre">GraphNodeData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#Viewport"><code class="docutils literal notranslate"><span class="pre">Viewport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#base-models">Base Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.id"><code class="docutils literal notranslate"><span class="pre">BaseModel.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.created_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.updated_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.to_dict"><code class="docutils literal notranslate"><span class="pre">BaseModel.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#pagination-models">Pagination Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedResponse"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.page"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.total"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.has_more</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.data"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__iter__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__iter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__len__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__len__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#logging-models">Logging Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedWorkflowLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.has_more</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#workflow-execution-models">Workflow Execution Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="llms.html">Language Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="llms.html#model-provider-management">Model Provider Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#ModelProvider"><code class="docutils literal notranslate"><span class="pre">ModelProvider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.__init__"><code class="docutils literal notranslate"><span class="pre">ModelProvider.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.info"><code class="docutils literal notranslate"><span class="pre">ModelProvider.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.update_credentials"><code class="docutils literal notranslate"><span class="pre">ModelProvider.update_credentials()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.validate_credentials"><code class="docutils literal notranslate"><span class="pre">ModelProvider.validate_credentials()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#ModelProvider.delete"><code class="docutils literal notranslate"><span class="pre">ModelProvider.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llms.html#data-models">Data Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#SupportedModelType"><code class="docutils literal notranslate"><span class="pre">SupportedModelType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.text_embedding"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.text_embedding</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.speech2text"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.speech2text</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.moderation"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.moderation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.tts"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.tts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.llm"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.llm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="llms.html#SupportedModelType.rerank"><code class="docutils literal notranslate"><span class="pre">SupportedModelType.rerank</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#ModelProviderInfo"><code class="docutils literal notranslate"><span class="pre">ModelProviderInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="llms.html#ModelProviderHelp"><code class="docutils literal notranslate"><span class="pre">ModelProviderHelp</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#development-setup">Development Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-style">Code Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">[0.0.5] - 2025-04-17</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#deprecated">Deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#removed">Removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#fixed">Fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#security">Security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dify_user_client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Search</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ivan Pikulin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <script>
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script id="searchindexloader"></script>
+   
+
+
+</body>
+</html>
