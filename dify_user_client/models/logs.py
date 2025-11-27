@@ -88,4 +88,32 @@ class WorkflowNodeExecution(BaseModel):
 
 
 class WorkflowNodeExecutions(BaseModel):
-    data: List[WorkflowNodeExecution] 
+    data: List[WorkflowNodeExecution]
+
+
+class ChatMessage(BaseModel):
+    """Represents a single chat message in a conversation."""
+    id: str
+    conversation_id: str
+    inputs: Optional[Dict[str, Any]] = None
+    query: Optional[str] = None
+    answer: Optional[str] = None
+    message: Optional[Dict[str, Any]] = None
+    feedback: Optional[Dict[str, Any]] = None
+    created_at: int
+    created_by_role: Optional[str] = None
+    created_by_account: Optional[Dict[str, Any]] = None
+    created_by_end_user: Optional[Dict[str, Any]] = None
+    from_source: Optional[str] = None
+    from_end_user_id: Optional[str] = None
+    from_end_user_session_id: Optional[str] = None
+    from_account_id: Optional[str] = None
+    from_account_name: Optional[str] = None
+    
+    class Config:
+        extra = 'allow'  # Allow additional fields from API
+
+
+class PaginatedChatMessages(PaginatedResponse[ChatMessage]):
+    """Paginated response for chat messages."""
+    pass 

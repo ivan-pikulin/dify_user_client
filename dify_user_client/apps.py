@@ -10,7 +10,8 @@ from .tools import WorkflowToolProviderInfo
 from .models import (
     AppType, AppToken, Graph, GraphNode, GraphEdge, GraphNodeData, GraphEdgeData, 
     Viewport, WorkflowDraft, PaginatedWorkflowLogs, PaginatedAgentLogs, 
-    WorkflowLogEntry, AgentConversation, WorkflowNodeExecutions
+    WorkflowLogEntry, AgentConversation, WorkflowNodeExecutions,
+    PaginatedChatMessages
 )
 
 
@@ -277,6 +278,29 @@ class AgentApp(App):
             if not response.has_more:
                 break
             page += 1
+
+    def get_messages(self, conversation_id: str, limit: int = 10, page: int = 1) -> PaginatedChatMessages:
+        """
+        Get chat messages for a specific conversation.
+        
+        Args:
+            conversation_id: The ID of the conversation to get messages from
+            limit: Maximum number of messages to return (default: 10)
+            page: Page number to retrieve (default: 1)
+            
+        Returns:
+            PaginatedChatMessages containing 'data' (list of ChatMessage objects) and 'has_more' (bool) fields
+        """
+        url = f"{self.client.base_url}/console/api/apps/{self.id}/chat-messages?conversation_id={conversation_id}&limit={limit}&page={page}"
+        response = self.client._send_user_request("GET", url)
+        # Ensure required fields are present for PaginatedResponse
+        if 'page' not in response:
+            response['page'] = page
+        if 'limit' not in response:
+            response['limit'] = limit
+        if 'total' not in response:
+            response['total'] = len(response.get('data', []))
+        return PaginatedChatMessages(**response)
 
 
 class ChatApp(App):
