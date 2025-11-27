@@ -89,10 +89,39 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="apps.html">Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#app-types">App Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#App.create"><code class="docutils literal notranslate"><span class="pre">App.create()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.id"><code class="docutils literal notranslate"><span class="pre">Chat.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.app"><code class="docutils literal notranslate"><span class="pre">Chat.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.client"><code class="docutils literal notranslate"><span class="pre">Chat.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.info"><code class="docutils literal notranslate"><span class="pre">Chat.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_node_executions"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_node_executions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_messages"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_messages()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-applications">Chat Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.get_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.iter_logs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#completion-applications">Completion Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#advanced-chat-applications">Advanced Chat Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#type-safety">Type Safety</a></li>
 </ul>
@@ -232,13 +261,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#WorkflowLogEntry"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.id"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.workflow_run"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.workflow_run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.created_from"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_from</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_end_user</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowLogEntry.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_at</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#WorkflowRun"><code class="docutils literal notranslate"><span class="pre">WorkflowRun</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.id"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.version"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.version</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.status"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.error"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.error</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.total_steps"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.finished_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowRun.exceptions_count"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.exceptions_count</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -253,10 +293,92 @@
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.elapsed_time</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.inputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.inputs</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.outputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.outputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.process_data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.process_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.index"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.predecessor_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.predecessor_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.execution_metadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.execution_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.extras"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.extras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecution.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.finished_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#agent-and-chat-logging">Agent and Chat Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chat-messages">Chat Messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -282,6 +404,112 @@
 <li class="toctree-l3"><a class="reference internal" href="models.html#GraphEdgeData"><code class="docutils literal notranslate"><span class="pre">GraphEdgeData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#GraphNodeData"><code class="docutils literal notranslate"><span class="pre">GraphNodeData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#Viewport"><code class="docutils literal notranslate"><span class="pre">Viewport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#base-models">Base Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.id"><code class="docutils literal notranslate"><span class="pre">BaseModel.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.created_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.updated_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.to_dict"><code class="docutils literal notranslate"><span class="pre">BaseModel.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#pagination-models">Pagination Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedResponse"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.page"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.total"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.has_more</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.data"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__iter__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__iter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__len__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__len__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#logging-models">Logging Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedWorkflowLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.has_more</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#workflow-execution-models">Workflow Execution Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -386,6 +614,20 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get agent/chat conversation logs</span>
+<span class="n">agent_app</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_app</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s2">&quot;your-agent-app-id&quot;</span><span class="p">)</span>
+<span class="n">conversations</span> <span class="o">=</span> <span class="n">agent_app</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">conversation</span> <span class="ow">in</span> <span class="n">conversations</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conversation </span><span class="si">{</span><span class="n">conversation</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">conversation</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get messages for a conversation</span>
+<span class="n">conversation_id</span> <span class="o">=</span> <span class="n">conversations</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="n">agent_app</span><span class="o">.</span><span class="n">get_messages</span><span class="p">(</span><span class="n">conversation_id</span><span class="o">=</span><span class="n">conversation_id</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">messages</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Message: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Answer: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -397,7 +639,7 @@
 <dd><p>Represents a chat conversation session. Used for tracking and retrieving message history.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="Chat.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="clients.html#DifyBaseClient" title="DifyBaseClient"><span class="pre">DifyBaseClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">App</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Chat.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="clients.html#DifyBaseClient" title="DifyBaseClient"><span class="pre">DifyBaseClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">App</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Chat.__init__" title="Link to this definition"></a></dt>
 <dd><p>Initialize a new chat session.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -413,7 +655,7 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="Chat.messages">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">messages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#Chat.messages" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">messages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#Chat.messages" title="Link to this definition"></a></dt>
 <dd><p>Retrieves chat messages for the conversation, with pagination support.
 Returns a list of message dictionaries.</p>
 <dl class="field-list simple">
@@ -437,7 +679,7 @@ Returns a list of message dictionaries.</p>
 <dd><p>Represents a single workflow execution log entry.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowLogEntry.id">
-<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowLogEntry.id" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowLogEntry.id" title="Link to this definition"></a></dt>
 <dd><p>Unique identifier for the log entry.</p>
 </dd></dl>
 
@@ -448,8 +690,32 @@ Returns a list of message dictionaries.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.created_from">
+<span class="sig-name descname"><span class="pre">created_from</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowLogEntry.created_from" title="Link to this definition"></a></dt>
+<dd><p>Source from which the workflow was created.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.created_by_role">
+<span class="sig-name descname"><span class="pre">created_by_role</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowLogEntry.created_by_role" title="Link to this definition"></a></dt>
+<dd><p>Role of the user who created the workflow run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.created_by_account">
+<span class="sig-name descname"><span class="pre">created_by_account</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowLogEntry.created_by_account" title="Link to this definition"></a></dt>
+<dd><p>Account information of the creator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowLogEntry.created_by_end_user">
+<span class="sig-name descname"><span class="pre">created_by_end_user</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#WorkflowLogEntry.created_by_end_user" title="Link to this definition"></a></dt>
+<dd><p>End user information.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowLogEntry.created_at">
-<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowLogEntry.created_at" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowLogEntry.created_at" title="Link to this definition"></a></dt>
 <dd><p>Timestamp when the log entry was created.</p>
 </dd></dl>
 
@@ -461,20 +727,62 @@ Returns a list of message dictionaries.</p>
 <dd><p>Contains information about a specific workflow run.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowRun.id">
-<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.id" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.id" title="Link to this definition"></a></dt>
 <dd><p>Unique identifier for the workflow run.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.version" title="Link to this definition"></a></dt>
+<dd><p>Version of the workflow.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowRun.status">
-<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.status" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowRun.status" title="Link to this definition"></a></dt>
 <dd><p>Current status of the workflow run.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.error">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowRun.error" title="Link to this definition"></a></dt>
+<dd><p>Error message if the workflow run failed.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowRun.elapsed_time">
-<span class="sig-name descname"><span class="pre">elapsed_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#WorkflowRun.elapsed_time" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">elapsed_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#WorkflowRun.elapsed_time" title="Link to this definition"></a></dt>
 <dd><p>Time taken to execute the workflow.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.total_tokens">
+<span class="sig-name descname"><span class="pre">total_tokens</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowRun.total_tokens" title="Link to this definition"></a></dt>
+<dd><p>Total number of tokens used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.total_steps">
+<span class="sig-name descname"><span class="pre">total_steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowRun.total_steps" title="Link to this definition"></a></dt>
+<dd><p>Total number of steps executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowRun.created_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the workflow run was created.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.finished_at">
+<span class="sig-name descname"><span class="pre">finished_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowRun.finished_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the workflow run finished.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowRun.exceptions_count">
+<span class="sig-name descname"><span class="pre">exceptions_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowRun.exceptions_count" title="Link to this definition"></a></dt>
+<dd><p>Number of exceptions encountered during execution.</p>
 </dd></dl>
 
 </dd></dl>
@@ -488,50 +796,158 @@ Returns a list of message dictionaries.</p>
 <dd><p>Represents the execution of a single node in a workflow.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.id">
-<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.id" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.id" title="Link to this definition"></a></dt>
 <dd><p>Unique identifier for the node execution.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.node_type">
-<span class="sig-name descname"><span class="pre">node_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.node_type" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">node_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.node_type" title="Link to this definition"></a></dt>
 <dd><p>Type of the workflow node.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.title">
-<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.title" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.title" title="Link to this definition"></a></dt>
 <dd><p>Title of the node.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.status">
-<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.status" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.status" title="Link to this definition"></a></dt>
 <dd><p>Execution status of the node.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.error">
-<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.error" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.error" title="Link to this definition"></a></dt>
 <dd><p>Error message if the node execution failed.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.elapsed_time">
-<span class="sig-name descname"><span class="pre">elapsed_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.elapsed_time" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">elapsed_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.elapsed_time" title="Link to this definition"></a></dt>
 <dd><p>Time taken to execute the node.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.inputs">
-<span class="sig-name descname"><span class="pre">inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.inputs" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.inputs" title="Link to this definition"></a></dt>
 <dd><p>Input parameters provided to the node.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WorkflowNodeExecution.outputs">
-<span class="sig-name descname"><span class="pre">outputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.outputs" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">outputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.outputs" title="Link to this definition"></a></dt>
 <dd><p>Output values produced by the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.process_data">
+<span class="sig-name descname"><span class="pre">process_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.process_data" title="Link to this definition"></a></dt>
+<dd><p>Process data during node execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.index">
+<span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.index" title="Link to this definition"></a></dt>
+<dd><p>Index of the node execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.predecessor_node_id">
+<span class="sig-name descname"><span class="pre">predecessor_node_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.predecessor_node_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the predecessor node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.node_id">
+<span class="sig-name descname"><span class="pre">node_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.node_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the node being executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.execution_metadata">
+<span class="sig-name descname"><span class="pre">execution_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata" title="WorkflowNodeExecutionMetadata"><span class="pre">WorkflowNodeExecutionMetadata</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.execution_metadata" title="Link to this definition"></a></dt>
+<dd><p>Metadata about the node execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.extras">
+<span class="sig-name descname"><span class="pre">extras</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#WorkflowNodeExecution.extras" title="Link to this definition"></a></dt>
+<dd><p>Additional extra data.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.created_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the node execution was created.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.created_by_role">
+<span class="sig-name descname"><span class="pre">created_by_role</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.created_by_role" title="Link to this definition"></a></dt>
+<dd><p>Role of the user who triggered the execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.created_by_account">
+<span class="sig-name descname"><span class="pre">created_by_account</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.created_by_account" title="Link to this definition"></a></dt>
+<dd><p>Account information of the creator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.created_by_end_user">
+<span class="sig-name descname"><span class="pre">created_by_end_user</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#WorkflowNodeExecution.created_by_end_user" title="Link to this definition"></a></dt>
+<dd><p>End user information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecution.finished_at">
+<span class="sig-name descname"><span class="pre">finished_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#WorkflowNodeExecution.finished_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the node execution finished.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowNodeExecutionMetadata</span></span><a class="headerlink" href="#WorkflowNodeExecutionMetadata" title="Link to this definition"></a></dt>
+<dd><p>Metadata about workflow node execution.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata.parallel_id">
+<span class="sig-name descname"><span class="pre">parallel_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecutionMetadata.parallel_id" title="Link to this definition"></a></dt>
+<dd><p>ID for parallel execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata.parallel_start_node_id">
+<span class="sig-name descname"><span class="pre">parallel_start_node_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecutionMetadata.parallel_start_node_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the starting node in parallel execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata.tool_info">
+<span class="sig-name descname"><span class="pre">tool_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecutionMetadata.tool_info" title="Link to this definition"></a></dt>
+<dd><p>Information about tools used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata.total_tokens">
+<span class="sig-name descname"><span class="pre">total_tokens</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecutionMetadata.total_tokens" title="Link to this definition"></a></dt>
+<dd><p>Total tokens used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata.total_price">
+<span class="sig-name descname"><span class="pre">total_price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecutionMetadata.total_price" title="Link to this definition"></a></dt>
+<dd><p>Total price of execution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WorkflowNodeExecutionMetadata.currency">
+<span class="sig-name descname"><span class="pre">currency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#WorkflowNodeExecutionMetadata.currency" title="Link to this definition"></a></dt>
+<dd><p>Currency for the price.</p>
 </dd></dl>
 
 </dd></dl>
@@ -544,6 +960,300 @@ Returns a list of message dictionaries.</p>
 <dt class="sig sig-object py" id="WorkflowNodeExecutions.data">
 <span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#WorkflowNodeExecution" title="WorkflowNodeExecution"><span class="pre">WorkflowNodeExecution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#WorkflowNodeExecutions.data" title="Link to this definition"></a></dt>
 <dd><p>List of node executions.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="agent-and-chat-logging">
+<h2>Agent and Chat Logging<a class="headerlink" href="#agent-and-chat-logging" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AgentConversation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AgentConversation</span></span><a class="headerlink" href="#AgentConversation" title="Link to this definition"></a></dt>
+<dd><p>Represents a single agent or chat conversation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#AgentConversation.id" title="Link to this definition"></a></dt>
+<dd><p>Unique identifier for the conversation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#AgentConversation.status" title="Link to this definition"></a></dt>
+<dd><p>Current status of the conversation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.from_source">
+<span class="sig-name descname"><span class="pre">from_source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#AgentConversation.from_source" title="Link to this definition"></a></dt>
+<dd><p>Source from which the conversation originated.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.from_end_user_id">
+<span class="sig-name descname"><span class="pre">from_end_user_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#AgentConversation.from_end_user_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the end user who started the conversation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.from_end_user_session_id">
+<span class="sig-name descname"><span class="pre">from_end_user_session_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#AgentConversation.from_end_user_session_id" title="Link to this definition"></a></dt>
+<dd><p>Session ID of the end user.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.from_account_id">
+<span class="sig-name descname"><span class="pre">from_account_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#AgentConversation.from_account_id" title="Link to this definition"></a></dt>
+<dd><p>Account ID of the creator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.from_account_name">
+<span class="sig-name descname"><span class="pre">from_account_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#AgentConversation.from_account_name" title="Link to this definition"></a></dt>
+<dd><p>Name of the account creator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#AgentConversation.name" title="Link to this definition"></a></dt>
+<dd><p>Name of the conversation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#AgentConversation.summary" title="Link to this definition"></a></dt>
+<dd><p>Summary of the conversation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.read_at">
+<span class="sig-name descname"><span class="pre">read_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#AgentConversation.read_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the conversation was last read.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#AgentConversation.created_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the conversation was created.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#AgentConversation.updated_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the conversation was last updated.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.annotated">
+<span class="sig-name descname"><span class="pre">annotated</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#AgentConversation.annotated" title="Link to this definition"></a></dt>
+<dd><p>Whether the conversation has been annotated.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.agent_model_config">
+<span class="sig-name descname"><span class="pre">agent_model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#AgentConversation.agent_model_config" title="Link to this definition"></a></dt>
+<dd><p>Model configuration for the agent (aliased as “model_config” in API).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.message_count">
+<span class="sig-name descname"><span class="pre">message_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#AgentConversation.message_count" title="Link to this definition"></a></dt>
+<dd><p>Number of messages in the conversation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.user_feedback_stats">
+<span class="sig-name descname"><span class="pre">user_feedback_stats</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#AgentConversation.user_feedback_stats" title="Link to this definition"></a></dt>
+<dd><p>Statistics about user feedback.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.admin_feedback_stats">
+<span class="sig-name descname"><span class="pre">admin_feedback_stats</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#AgentConversation.admin_feedback_stats" title="Link to this definition"></a></dt>
+<dd><p>Statistics about admin feedback.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AgentConversation.status_count">
+<span class="sig-name descname"><span class="pre">status_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#AgentConversation.status_count" title="Link to this definition"></a></dt>
+<dd><p>Count of different statuses.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="chat-messages">
+<h2>Chat Messages<a class="headerlink" href="#chat-messages" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ChatMessage">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChatMessage</span></span><a class="headerlink" href="#ChatMessage" title="Link to this definition"></a></dt>
+<dd><p>Represents a single chat message in a conversation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#ChatMessage.id" title="Link to this definition"></a></dt>
+<dd><p>Unique identifier for the message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.conversation_id">
+<span class="sig-name descname"><span class="pre">conversation_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#ChatMessage.conversation_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the conversation this message belongs to.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.inputs">
+<span class="sig-name descname"><span class="pre">inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.inputs" title="Link to this definition"></a></dt>
+<dd><p>Input parameters provided with the message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.query">
+<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.query" title="Link to this definition"></a></dt>
+<dd><p>The user’s query or question.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.answer">
+<span class="sig-name descname"><span class="pre">answer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.answer" title="Link to this definition"></a></dt>
+<dd><p>The assistant’s answer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.message" title="Link to this definition"></a></dt>
+<dd><p>Full message object with additional metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.feedback">
+<span class="sig-name descname"><span class="pre">feedback</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.feedback" title="Link to this definition"></a></dt>
+<dd><p>User feedback on the message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#ChatMessage.created_at" title="Link to this definition"></a></dt>
+<dd><p>Timestamp when the message was created.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.created_by_role">
+<span class="sig-name descname"><span class="pre">created_by_role</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.created_by_role" title="Link to this definition"></a></dt>
+<dd><p>Role of the user who created the message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.created_by_account">
+<span class="sig-name descname"><span class="pre">created_by_account</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.created_by_account" title="Link to this definition"></a></dt>
+<dd><p>Account information of the creator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.created_by_end_user">
+<span class="sig-name descname"><span class="pre">created_by_end_user</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.created_by_end_user" title="Link to this definition"></a></dt>
+<dd><p>End user information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.from_source">
+<span class="sig-name descname"><span class="pre">from_source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.from_source" title="Link to this definition"></a></dt>
+<dd><p>Source from which the message originated.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.from_end_user_id">
+<span class="sig-name descname"><span class="pre">from_end_user_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.from_end_user_id" title="Link to this definition"></a></dt>
+<dd><p>ID of the end user.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.from_end_user_session_id">
+<span class="sig-name descname"><span class="pre">from_end_user_session_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.from_end_user_session_id" title="Link to this definition"></a></dt>
+<dd><p>Session ID of the end user.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.from_account_id">
+<span class="sig-name descname"><span class="pre">from_account_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.from_account_id" title="Link to this definition"></a></dt>
+<dd><p>Account ID of the creator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ChatMessage.from_account_name">
+<span class="sig-name descname"><span class="pre">from_account_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#ChatMessage.from_account_name" title="Link to this definition"></a></dt>
+<dd><p>Name of the account creator.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PaginatedChatMessages">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PaginatedChatMessages</span></span><a class="headerlink" href="#PaginatedChatMessages" title="Link to this definition"></a></dt>
+<dd><p>Paginated response containing chat messages.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedChatMessages.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="models.html#ChatMessage" title="ChatMessage"><span class="pre">ChatMessage</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#PaginatedChatMessages.data" title="Link to this definition"></a></dt>
+<dd><p>List of chat messages in the current page.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedChatMessages.page">
+<span class="sig-name descname"><span class="pre">page</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#PaginatedChatMessages.page" title="Link to this definition"></a></dt>
+<dd><p>Current page number.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedChatMessages.limit">
+<span class="sig-name descname"><span class="pre">limit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#PaginatedChatMessages.limit" title="Link to this definition"></a></dt>
+<dd><p>Number of items per page.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedChatMessages.total">
+<span class="sig-name descname"><span class="pre">total</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#PaginatedChatMessages.total" title="Link to this definition"></a></dt>
+<dd><p>Total number of items.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedChatMessages.has_more">
+<span class="sig-name descname"><span class="pre">has_more</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#PaginatedChatMessages.has_more" title="Link to this definition"></a></dt>
+<dd><p>Whether there are more pages available.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PaginatedAgentLogs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PaginatedAgentLogs</span></span><a class="headerlink" href="#PaginatedAgentLogs" title="Link to this definition"></a></dt>
+<dd><p>Paginated response containing agent conversation logs.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedAgentLogs.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="models.html#AgentConversation" title="AgentConversation"><span class="pre">AgentConversation</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#PaginatedAgentLogs.data" title="Link to this definition"></a></dt>
+<dd><p>List of conversations in the current page.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedAgentLogs.page">
+<span class="sig-name descname"><span class="pre">page</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#PaginatedAgentLogs.page" title="Link to this definition"></a></dt>
+<dd><p>Current page number.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedAgentLogs.limit">
+<span class="sig-name descname"><span class="pre">limit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#PaginatedAgentLogs.limit" title="Link to this definition"></a></dt>
+<dd><p>Number of items per page.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedAgentLogs.total">
+<span class="sig-name descname"><span class="pre">total</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#PaginatedAgentLogs.total" title="Link to this definition"></a></dt>
+<dd><p>Total number of items.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PaginatedAgentLogs.has_more">
+<span class="sig-name descname"><span class="pre">has_more</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#PaginatedAgentLogs.has_more" title="Link to this definition"></a></dt>
+<dd><p>Whether there are more pages available.</p>
 </dd></dl>
 
 </dd></dl>

@@ -86,10 +86,39 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="apps.html">Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#app-types">App Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#App.create"><code class="docutils literal notranslate"><span class="pre">App.create()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.id"><code class="docutils literal notranslate"><span class="pre">Chat.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.app"><code class="docutils literal notranslate"><span class="pre">Chat.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.client"><code class="docutils literal notranslate"><span class="pre">Chat.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.info"><code class="docutils literal notranslate"><span class="pre">Chat.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_node_executions"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_node_executions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_messages"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_messages()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-applications">Chat Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.get_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.iter_logs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#completion-applications">Completion Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#advanced-chat-applications">Advanced Chat Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#type-safety">Type Safety</a></li>
 </ul>
@@ -229,13 +258,24 @@
 <li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowLogEntry"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.id"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.workflow_run"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.workflow_run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_from"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_from</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_end_user</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_at</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowRun"><code class="docutils literal notranslate"><span class="pre">WorkflowRun</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.id"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.version"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.version</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.status"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.error"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.error</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.total_steps"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.finished_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.exceptions_count"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.exceptions_count</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -250,10 +290,92 @@
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.elapsed_time</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.inputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.inputs</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.outputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.outputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.process_data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.process_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.index"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.predecessor_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.predecessor_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.execution_metadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.execution_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.extras"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.extras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.finished_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#agent-and-chat-logging">Agent and Chat Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#chat-messages">Chat Messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -279,6 +401,112 @@
 <li class="toctree-l3"><a class="reference internal" href="models.html#GraphEdgeData"><code class="docutils literal notranslate"><span class="pre">GraphEdgeData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#GraphNodeData"><code class="docutils literal notranslate"><span class="pre">GraphNodeData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#Viewport"><code class="docutils literal notranslate"><span class="pre">Viewport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#base-models">Base Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.id"><code class="docutils literal notranslate"><span class="pre">BaseModel.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.created_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.updated_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.to_dict"><code class="docutils literal notranslate"><span class="pre">BaseModel.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#pagination-models">Pagination Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedResponse"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.page"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.total"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.has_more</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.data"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__iter__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__iter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__len__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__len__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#logging-models">Logging Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedWorkflowLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.has_more</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#workflow-execution-models">Workflow Execution Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -368,7 +596,9 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
@@ -376,6 +606,7 @@
  | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
@@ -405,6 +636,10 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#PaginatedResponse.__iter__">__iter__() (PaginatedResponse method)</a>
+</li>
+      <li><a href="models.html#PaginatedResponse.__len__">__len__() (PaginatedResponse method)</a>
+</li>
       <li><a href="clients.html#DifyBaseClient._login">_login() (DifyBaseClient method)</a>
 </li>
       <li><a href="clients.html#DifyBaseClient._send_user_request">_send_user_request() (DifyBaseClient method)</a>
@@ -415,10 +650,22 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#AgentConversation.admin_feedback_stats">admin_feedback_stats (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.admin_feedback_stats">[1]</a>
+</li>
+      <li><a href="logging.html#AgentConversation.agent_model_config">agent_model_config (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.agent_model_config">[1]</a>
+</li>
+      <li><a href="logging.html#AgentConversation">AgentConversation (built-in class)</a>, <a href="models.html#AgentConversation">[1]</a>
+</li>
       <li><a href="knowledge.html#DatasetPermissionEnum.ALL_TEAM">ALL_TEAM (DatasetPermissionEnum attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#AgentConversation.annotated">annotated (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.annotated">[1]</a>
+</li>
+      <li><a href="logging.html#ChatMessage.answer">answer (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.answer">[1]</a>
+</li>
+      <li><a href="apps.html#Chat.app">app (Chat attribute)</a>
+</li>
       <li><a href="clients.html#DifyUserClient.apps">apps (DifyUserClient property)</a>
 </li>
       <li><a href="models.html#AppToken">AppToken (built-in class)</a>
@@ -429,10 +676,12 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tools.html#BuiltinTool">BuiltinTool (built-in class)</a>
+      <li><a href="models.html#BaseModel">BaseModel (built-in class)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="tools.html#BuiltinTool">BuiltinTool (built-in class)</a>
+</li>
       <li><a href="tools.html#BuiltinToolProvider">BuiltinToolProvider (built-in class)</a>
 </li>
   </ul></td>
@@ -441,22 +690,28 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="logging.html#Chat">Chat (built-in class)</a>
+      <li><a href="apps.html#Chat">Chat (built-in class)</a>, <a href="logging.html#Chat">[1]</a>
+</li>
+      <li><a href="logging.html#ChatMessage">ChatMessage (built-in class)</a>, <a href="models.html#ChatMessage">[1]</a>
 </li>
       <li><a href="knowledge.html#DocumentIndexingStatuses.CLEANING">CLEANING (DocumentIndexingStatuses attribute)</a>
 </li>
+      <li><a href="apps.html#Chat.client">client (Chat attribute)</a>
+</li>
       <li><a href="knowledge.html#DocumentIndexingStatuses.COMPLETED">COMPLETED (DocumentIndexingStatuses attribute)</a>
 </li>
-      <li><a href="tools.html#Tool.create">create() (Tool class method)</a>
+      <li><a href="logging.html#ChatMessage.conversation_id">conversation_id (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.conversation_id">[1]</a>
+</li>
+      <li><a href="apps.html#App.create">create() (App class method)</a>
 
       <ul>
+        <li><a href="tools.html#Tool.create">(Tool class method)</a>
+</li>
         <li><a href="tools.html#ToolProvider.create">(ToolProvider class method)</a>
 </li>
       </ul></li>
       <li><a href="clients.html#DifyUserClient.create_app">create_app() (DifyUserClient method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clients.html#DifyUserClient.create_app_from_yaml">create_app_from_yaml() (DifyUserClient method)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDataset.create_document_by_file">create_document_by_file() (KnowledgeDataset method)</a>
@@ -465,9 +720,51 @@
 </li>
       <li><a href="knowledge.html#KnowledgeDocument.create_segments">create_segments() (KnowledgeDocument method)</a>
 </li>
-      <li><a href="logging.html#WorkflowLogEntry.created_at">created_at (WorkflowLogEntry attribute)</a>
+      <li><a href="logging.html#AgentConversation.created_at">created_at (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.created_at">[1]</a>
+
+      <ul>
+        <li><a href="models.html#BaseModel.created_at">(BaseModel attribute)</a>
+</li>
+        <li><a href="logging.html#ChatMessage.created_at">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.created_at">[1]</a>
+</li>
+        <li><a href="logging.html#WorkflowLogEntry.created_at">(WorkflowLogEntry attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowNodeExecution.created_at">(WorkflowNodeExecution attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowRun.created_at">(WorkflowRun attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#ChatMessage.created_by_account">created_by_account (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.created_by_account">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowLogEntry.created_by_account">(WorkflowLogEntry attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowNodeExecution.created_by_account">(WorkflowNodeExecution attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#ChatMessage.created_by_end_user">created_by_end_user (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.created_by_end_user">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowLogEntry.created_by_end_user">(WorkflowLogEntry attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowNodeExecution.created_by_end_user">(WorkflowNodeExecution attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#ChatMessage.created_by_role">created_by_role (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.created_by_role">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowLogEntry.created_by_role">(WorkflowLogEntry attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowNodeExecution.created_by_role">(WorkflowNodeExecution attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#WorkflowLogEntry.created_from">created_from (WorkflowLogEntry attribute)</a>
 </li>
       <li><a href="clients.html#Credentials">Credentials (built-in class)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecutionMetadata.currency">currency (WorkflowNodeExecutionMetadata attribute)</a>, <a href="models.html#WorkflowNodeExecutionMetadata.currency">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -478,7 +775,15 @@
       <li><a href="knowledge.html#KnowledgeDocument.data">data (KnowledgeDocument property)</a>
 
       <ul>
-        <li><a href="logging.html#WorkflowNodeExecutions.data">(WorkflowNodeExecutions attribute)</a>
+        <li><a href="logging.html#PaginatedAgentLogs.data">(PaginatedAgentLogs attribute)</a>, <a href="models.html#PaginatedAgentLogs.data">[1]</a>
+</li>
+        <li><a href="logging.html#PaginatedChatMessages.data">(PaginatedChatMessages attribute)</a>, <a href="models.html#PaginatedChatMessages.data">[1]</a>
+</li>
+        <li><a href="models.html#PaginatedResponse.data">(PaginatedResponse attribute)</a>
+</li>
+        <li><a href="models.html#PaginatedWorkflowLogs.data">(PaginatedWorkflowLogs attribute)</a>
+</li>
+        <li><a href="logging.html#WorkflowNodeExecutions.data">(WorkflowNodeExecutions attribute)</a>, <a href="models.html#WorkflowNodeExecutions.data">[1]</a>
 </li>
       </ul></li>
       <li><a href="knowledge.html#DatasetPermissionEnum">DatasetPermissionEnum (built-in class)</a>
@@ -523,12 +828,68 @@
         <li><a href="logging.html#WorkflowRun.elapsed_time">(WorkflowRun attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#DocumentIndexingStatuses.ERROR">ERROR (DocumentIndexingStatuses attribute)</a>
 </li>
       <li><a href="logging.html#WorkflowNodeExecution.error">error (WorkflowNodeExecution attribute)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowRun.error">(WorkflowRun attribute)</a>
 </li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowRun.exceptions_count">exceptions_count (WorkflowRun attribute)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecution.execution_metadata">execution_metadata (WorkflowNodeExecution attribute)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecution.extras">extras (WorkflowNodeExecution attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#ChatMessage.feedback">feedback (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.feedback">[1]</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecution.finished_at">finished_at (WorkflowNodeExecution attribute)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowRun.finished_at">(WorkflowRun attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#AgentConversation.from_account_id">from_account_id (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.from_account_id">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#ChatMessage.from_account_id">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.from_account_id">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#AgentConversation.from_account_name">from_account_name (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.from_account_name">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#ChatMessage.from_account_name">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.from_account_name">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#AgentConversation.from_end_user_id">from_end_user_id (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.from_end_user_id">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#ChatMessage.from_end_user_id">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.from_end_user_id">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#AgentConversation.from_end_user_session_id">from_end_user_session_id (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.from_end_user_session_id">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#ChatMessage.from_end_user_session_id">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.from_end_user_session_id">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#AgentConversation.from_source">from_source (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.from_source">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#ChatMessage.from_source">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.from_source">[1]</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -539,14 +900,26 @@
 </li>
       <li><a href="knowledge.html#KnowledgeDataset.get_document">get_document() (KnowledgeDataset method)</a>
 </li>
+      <li><a href="apps.html#AgentApp.get_logs">get_logs() (AgentApp method)</a>
+
+      <ul>
+        <li><a href="apps.html#ChatApp.get_logs">(ChatApp method)</a>
+</li>
+        <li><a href="apps.html#WorkflowApp.get_logs">(WorkflowApp method)</a>
+</li>
+      </ul></li>
+      <li><a href="apps.html#AgentApp.get_messages">get_messages() (AgentApp method)</a>
+</li>
       <li><a href="clients.html#DifyUserClient.get_model_provider">get_model_provider() (DifyUserClient method)</a>
 </li>
+      <li><a href="apps.html#WorkflowApp.get_node_executions">get_node_executions() (WorkflowApp method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#KnowledgeDocument.get_segment">get_segment() (KnowledgeDocument method)</a>
 </li>
       <li><a href="clients.html#DifyUserClient.get_tool">get_tool() (DifyUserClient method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clients.html#DifyUserClient.get_tool_provider">get_tool_provider() (DifyUserClient method)</a>
 </li>
       <li><a href="models.html#Graph">Graph (built-in class)</a>
@@ -562,17 +935,43 @@
   </ul></td>
 </tr></table>
 
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#PaginatedAgentLogs.has_more">has_more (PaginatedAgentLogs attribute)</a>, <a href="models.html#PaginatedAgentLogs.has_more">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#PaginatedChatMessages.has_more">(PaginatedChatMessages attribute)</a>, <a href="models.html#PaginatedChatMessages.has_more">[1]</a>
+</li>
+        <li><a href="models.html#PaginatedResponse.has_more">(PaginatedResponse attribute)</a>
+</li>
+        <li><a href="models.html#PaginatedWorkflowLogs.has_more">(PaginatedWorkflowLogs attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="logging.html#WorkflowLogEntry.id">id (WorkflowLogEntry attribute)</a>
+      <li><a href="logging.html#AgentConversation.id">id (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.id">[1]</a>
 
       <ul>
+        <li><a href="models.html#BaseModel.id">(BaseModel attribute)</a>
+</li>
+        <li><a href="apps.html#Chat.id">(Chat attribute)</a>
+</li>
+        <li><a href="logging.html#ChatMessage.id">(ChatMessage attribute)</a>, <a href="models.html#ChatMessage.id">[1]</a>
+</li>
+        <li><a href="logging.html#WorkflowLogEntry.id">(WorkflowLogEntry attribute)</a>
+</li>
         <li><a href="logging.html#WorkflowNodeExecution.id">(WorkflowNodeExecution attribute)</a>
 </li>
         <li><a href="logging.html#WorkflowRun.id">(WorkflowRun attribute)</a>
 </li>
       </ul></li>
+      <li><a href="logging.html#WorkflowNodeExecution.index">index (WorkflowNodeExecution attribute)</a>
+</li>
       <li><a href="knowledge.html#DocumentIndexingStatuses.INDEXING">INDEXING (DocumentIndexingStatuses attribute)</a>
 </li>
       <li><a href="knowledge.html#KnowledgeDocument.indexing_status">indexing_status (KnowledgeDocument property)</a>
@@ -582,6 +981,8 @@
       <li><a href="tools.html#BuiltinTool.info">info (BuiltinTool property)</a>
 
       <ul>
+        <li><a href="apps.html#Chat.info">(Chat attribute)</a>
+</li>
         <li><a href="llms.html#ModelProvider.info">(ModelProvider property)</a>
 </li>
         <li><a href="tools.html#Tool.info">(Tool property)</a>
@@ -591,8 +992,20 @@
         <li><a href="tools.html#WorkflowToolProvider.info">(WorkflowToolProvider property)</a>
 </li>
       </ul></li>
-      <li><a href="logging.html#WorkflowNodeExecution.inputs">inputs (WorkflowNodeExecution attribute)</a>
+      <li><a href="logging.html#ChatMessage.inputs">inputs (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.inputs">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowNodeExecution.inputs">(WorkflowNodeExecution attribute)</a>
 </li>
+      </ul></li>
+      <li><a href="apps.html#AgentApp.iter_logs">iter_logs() (AgentApp method)</a>
+
+      <ul>
+        <li><a href="apps.html#ChatApp.iter_logs">(ChatApp method)</a>
+</li>
+        <li><a href="apps.html#WorkflowApp.iter_logs">(WorkflowApp method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -621,6 +1034,18 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#PaginatedAgentLogs.limit">limit (PaginatedAgentLogs attribute)</a>, <a href="models.html#PaginatedAgentLogs.limit">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#PaginatedChatMessages.limit">(PaginatedChatMessages attribute)</a>, <a href="models.html#PaginatedChatMessages.limit">[1]</a>
+</li>
+        <li><a href="models.html#PaginatedResponse.limit">(PaginatedResponse attribute)</a>
+</li>
+        <li><a href="models.html#PaginatedWorkflowLogs.limit">(PaginatedWorkflowLogs attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="llms.html#SupportedModelType.llm">llm (SupportedModelType attribute)</a>
 </li>
   </ul></td>
@@ -629,14 +1054,18 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="logging.html#Chat.messages">messages (Chat property)</a>
+      <li><a href="logging.html#ChatMessage.message">message (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.message">[1]</a>
+</li>
+      <li><a href="logging.html#AgentConversation.message_count">message_count (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.message_count">[1]</a>
+</li>
+      <li><a href="apps.html#Chat.messages">messages (Chat property)</a>, <a href="logging.html#Chat.messages">[1]</a>
 </li>
       <li><a href="clients.html#DifyUserClient.model_providers">model_providers (DifyUserClient property)</a>
 </li>
-      <li><a href="llms.html#ModelProvider">ModelProvider (built-in class)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="llms.html#ModelProvider">ModelProvider (built-in class)</a>
+</li>
       <li><a href="llms.html#ModelProviderHelp">ModelProviderHelp (built-in class)</a>
 </li>
       <li><a href="llms.html#ModelProviderInfo">ModelProviderInfo (built-in class)</a>
@@ -649,6 +1078,12 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#AgentConversation.name">name (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.name">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowNodeExecution.node_id">node_id (WorkflowNodeExecution attribute)</a>
+</li>
       <li><a href="logging.html#WorkflowNodeExecution.node_type">node_type (WorkflowNodeExecution attribute)</a>
 </li>
   </ul></td>
@@ -669,19 +1104,57 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="knowledge.html#DocumentIndexingStatuses.PARSING">PARSING (DocumentIndexingStatuses attribute)</a>
+      <li><a href="logging.html#PaginatedAgentLogs.page">page (PaginatedAgentLogs attribute)</a>, <a href="models.html#PaginatedAgentLogs.page">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#PaginatedChatMessages.page">(PaginatedChatMessages attribute)</a>, <a href="models.html#PaginatedChatMessages.page">[1]</a>
+</li>
+        <li><a href="models.html#PaginatedResponse.page">(PaginatedResponse attribute)</a>
+</li>
+        <li><a href="models.html#PaginatedWorkflowLogs.page">(PaginatedWorkflowLogs attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#PaginatedAgentLogs">PaginatedAgentLogs (built-in class)</a>, <a href="models.html#PaginatedAgentLogs">[1]</a>
+</li>
+      <li><a href="logging.html#PaginatedChatMessages">PaginatedChatMessages (built-in class)</a>, <a href="models.html#PaginatedChatMessages">[1]</a>
+</li>
+      <li><a href="models.html#PaginatedResponse">PaginatedResponse (built-in class)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#PaginatedWorkflowLogs">PaginatedWorkflowLogs (built-in class)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecutionMetadata.parallel_id">parallel_id (WorkflowNodeExecutionMetadata attribute)</a>, <a href="models.html#WorkflowNodeExecutionMetadata.parallel_id">[1]</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecutionMetadata.parallel_start_node_id">parallel_start_node_id (WorkflowNodeExecutionMetadata attribute)</a>, <a href="models.html#WorkflowNodeExecutionMetadata.parallel_start_node_id">[1]</a>
+</li>
+      <li><a href="knowledge.html#DocumentIndexingStatuses.PARSING">PARSING (DocumentIndexingStatuses attribute)</a>
+</li>
       <li><a href="knowledge.html#DatasetPermissionEnum.PARTIAL_TEAM">PARTIAL_TEAM (DatasetPermissionEnum attribute)</a>
 </li>
       <li><a href="knowledge.html#DocumentIndexingStatuses.PAUSED">PAUSED (DocumentIndexingStatuses attribute)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecution.predecessor_node_id">predecessor_node_id (WorkflowNodeExecution attribute)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecution.process_data">process_data (WorkflowNodeExecution attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#ChatMessage.query">query (ChatMessage attribute)</a>, <a href="models.html#ChatMessage.query">[1]</a>
 </li>
   </ul></td>
 </tr></table>
 
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#AgentConversation.read_at">read_at (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.read_at">[1]</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="llms.html#SupportedModelType.rerank">rerank (SupportedModelType attribute)</a>
 </li>
@@ -697,14 +1170,20 @@
 </li>
       <li><a href="knowledge.html#DocumentIndexingStatuses.SPLITTING">SPLITTING (DocumentIndexingStatuses attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="logging.html#WorkflowNodeExecution.status">status (WorkflowNodeExecution attribute)</a>
+      <li><a href="logging.html#AgentConversation.status">status (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.status">[1]</a>
 
       <ul>
+        <li><a href="logging.html#WorkflowNodeExecution.status">(WorkflowNodeExecution attribute)</a>
+</li>
         <li><a href="logging.html#WorkflowRun.status">(WorkflowRun attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#AgentConversation.status_count">status_count (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.status_count">[1]</a>
+</li>
+      <li><a href="logging.html#AgentConversation.summary">summary (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.summary">[1]</a>
+</li>
       <li><a href="llms.html#SupportedModelType">SupportedModelType (built-in class)</a>
 </li>
   </ul></td>
@@ -717,16 +1196,20 @@
 </li>
       <li><a href="logging.html#WorkflowNodeExecution.title">title (WorkflowNodeExecution attribute)</a>
 </li>
+      <li><a href="models.html#BaseModel.to_dict">to_dict() (BaseModel method)</a>
+</li>
       <li><a href="tools.html#Tool">Tool (built-in class)</a>
 </li>
       <li><a href="tools.html#ToolProvider.tool_info">tool_info (ToolProvider property)</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowNodeExecutionMetadata.tool_info">(WorkflowNodeExecutionMetadata attribute)</a>, <a href="models.html#WorkflowNodeExecutionMetadata.tool_info">[1]</a>
 </li>
+      </ul></li>
       <li><a href="clients.html#DifyUserClient.tool_providers">tool_providers (DifyUserClient property)</a>
 </li>
       <li><a href="tools.html#ToolInfo">ToolInfo (built-in class)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#ToolParameter">ToolParameter (built-in class)</a>
 </li>
       <li><a href="tools.html#ToolProvider">ToolProvider (built-in class)</a>
@@ -739,8 +1222,30 @@
         <li><a href="tools.html#WorkflowToolProvider.tools">(WorkflowToolProvider property)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#BuiltinToolProvider.tools_info">tools_info (BuiltinToolProvider property)</a>
 </li>
+      <li><a href="logging.html#PaginatedAgentLogs.total">total (PaginatedAgentLogs attribute)</a>, <a href="models.html#PaginatedAgentLogs.total">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#PaginatedChatMessages.total">(PaginatedChatMessages attribute)</a>, <a href="models.html#PaginatedChatMessages.total">[1]</a>
+</li>
+        <li><a href="models.html#PaginatedResponse.total">(PaginatedResponse attribute)</a>
+</li>
+        <li><a href="models.html#PaginatedWorkflowLogs.total">(PaginatedWorkflowLogs attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#WorkflowNodeExecutionMetadata.total_price">total_price (WorkflowNodeExecutionMetadata attribute)</a>, <a href="models.html#WorkflowNodeExecutionMetadata.total_price">[1]</a>
+</li>
+      <li><a href="logging.html#WorkflowRun.total_steps">total_steps (WorkflowRun attribute)</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecutionMetadata.total_tokens">total_tokens (WorkflowNodeExecutionMetadata attribute)</a>, <a href="models.html#WorkflowNodeExecutionMetadata.total_tokens">[1]</a>
+
+      <ul>
+        <li><a href="logging.html#WorkflowRun.total_tokens">(WorkflowRun attribute)</a>
+</li>
+      </ul></li>
       <li><a href="llms.html#SupportedModelType.tts">tts (SupportedModelType attribute)</a>
 </li>
   </ul></td>
@@ -757,13 +1262,21 @@
         <li><a href="llms.html#ModelProvider.update_credentials">(ModelProvider method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="knowledge.html#KnowledgeDataset.update_document_from_file">update_document_from_file() (KnowledgeDataset method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clients.html#DifyUserClient.update_system_model">update_system_model() (DifyUserClient method)</a>
 </li>
       <li><a href="clients.html#DifyUserClient.update_timezone">update_timezone() (DifyUserClient method)</a>
+</li>
+      <li><a href="logging.html#AgentConversation.updated_at">updated_at (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.updated_at">[1]</a>
+
+      <ul>
+        <li><a href="models.html#BaseModel.updated_at">(BaseModel attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="logging.html#AgentConversation.user_feedback_stats">user_feedback_stats (AgentConversation attribute)</a>, <a href="models.html#AgentConversation.user_feedback_stats">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -775,6 +1288,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="logging.html#WorkflowRun.version">version (WorkflowRun attribute)</a>
+</li>
       <li><a href="models.html#Viewport">Viewport (built-in class)</a>
 </li>
   </ul></td>
@@ -799,7 +1314,9 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="logging.html#WorkflowNodeExecution">WorkflowNodeExecution (built-in class)</a>
 </li>
-      <li><a href="logging.html#WorkflowNodeExecutions">WorkflowNodeExecutions (built-in class)</a>
+      <li><a href="logging.html#WorkflowNodeExecutionMetadata">WorkflowNodeExecutionMetadata (built-in class)</a>, <a href="models.html#WorkflowNodeExecutionMetadata">[1]</a>
+</li>
+      <li><a href="logging.html#WorkflowNodeExecutions">WorkflowNodeExecutions (built-in class)</a>, <a href="models.html#WorkflowNodeExecutions">[1]</a>
 </li>
       <li><a href="logging.html#WorkflowRun">WorkflowRun (built-in class)</a>
 </li>

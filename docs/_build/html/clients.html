@@ -89,10 +89,39 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="apps.html">Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#app-types">App Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#base-app-class">Base App Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#App.create"><code class="docutils literal notranslate"><span class="pre">App.create()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-management">Chat Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.id"><code class="docutils literal notranslate"><span class="pre">Chat.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.app"><code class="docutils literal notranslate"><span class="pre">Chat.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.client"><code class="docutils literal notranslate"><span class="pre">Chat.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.info"><code class="docutils literal notranslate"><span class="pre">Chat.info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps.html#Chat.messages"><code class="docutils literal notranslate"><span class="pre">Chat.messages</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#workflow-applications">Workflow Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#WorkflowApp.get_node_executions"><code class="docutils literal notranslate"><span class="pre">WorkflowApp.get_node_executions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#agent-applications">Agent Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">AgentApp.iter_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#AgentApp.get_messages"><code class="docutils literal notranslate"><span class="pre">AgentApp.get_messages()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#chat-applications">Chat Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.get_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.get_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps.html#ChatApp.iter_logs"><code class="docutils literal notranslate"><span class="pre">ChatApp.iter_logs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#completion-applications">Completion Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#advanced-chat-applications">Advanced Chat Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html#type-safety">Type Safety</a></li>
 </ul>
@@ -232,13 +261,24 @@
 <li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowLogEntry"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.id"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.workflow_run"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.workflow_run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_from"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_from</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_by_end_user</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowLogEntry.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowLogEntry.created_at</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowRun"><code class="docutils literal notranslate"><span class="pre">WorkflowRun</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.id"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.version"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.version</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.status"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.error"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.error</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.elapsed_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.total_steps"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.total_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.finished_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowRun.exceptions_count"><code class="docutils literal notranslate"><span class="pre">WorkflowRun.exceptions_count</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -253,10 +293,92 @@
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.elapsed_time"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.elapsed_time</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.inputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.inputs</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.outputs"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.outputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.process_data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.process_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.index"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.predecessor_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.predecessor_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.execution_metadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.execution_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.extras"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.extras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_role"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_account"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecution.finished_at"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecution.finished_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="logging.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#agent-and-chat-logging">Agent and Chat Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#chat-messages">Chat Messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="logging.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -282,6 +404,112 @@
 <li class="toctree-l3"><a class="reference internal" href="models.html#GraphEdgeData"><code class="docutils literal notranslate"><span class="pre">GraphEdgeData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#GraphNodeData"><code class="docutils literal notranslate"><span class="pre">GraphNodeData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#Viewport"><code class="docutils literal notranslate"><span class="pre">Viewport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#base-models">Base Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.id"><code class="docutils literal notranslate"><span class="pre">BaseModel.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.created_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.updated_at"><code class="docutils literal notranslate"><span class="pre">BaseModel.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#BaseModel.to_dict"><code class="docutils literal notranslate"><span class="pre">BaseModel.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#pagination-models">Pagination Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedResponse"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.page"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.total"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.has_more</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.data"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__iter__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__iter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedResponse.__len__"><code class="docutils literal notranslate"><span class="pre">PaginatedResponse.__len__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#logging-models">Logging Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#AgentConversation"><code class="docutils literal notranslate"><span class="pre">AgentConversation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_source"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_id"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.from_account_name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.from_account_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.name"><code class="docutils literal notranslate"><span class="pre">AgentConversation.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.summary"><code class="docutils literal notranslate"><span class="pre">AgentConversation.summary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.read_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.read_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.created_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.updated_at"><code class="docutils literal notranslate"><span class="pre">AgentConversation.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.annotated"><code class="docutils literal notranslate"><span class="pre">AgentConversation.annotated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.agent_model_config"><code class="docutils literal notranslate"><span class="pre">AgentConversation.agent_model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.message_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.message_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.user_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.user_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.admin_feedback_stats"><code class="docutils literal notranslate"><span class="pre">AgentConversation.admin_feedback_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#AgentConversation.status_count"><code class="docutils literal notranslate"><span class="pre">AgentConversation.status_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.conversation_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.conversation_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.inputs"><code class="docutils literal notranslate"><span class="pre">ChatMessage.inputs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.query"><code class="docutils literal notranslate"><span class="pre">ChatMessage.query</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.answer"><code class="docutils literal notranslate"><span class="pre">ChatMessage.answer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.message"><code class="docutils literal notranslate"><span class="pre">ChatMessage.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.feedback"><code class="docutils literal notranslate"><span class="pre">ChatMessage.feedback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_at"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_role"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_role</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_account"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.created_by_end_user"><code class="docutils literal notranslate"><span class="pre">ChatMessage.created_by_end_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_source"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_end_user_session_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_end_user_session_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#ChatMessage.from_account_name"><code class="docutils literal notranslate"><span class="pre">ChatMessage.from_account_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedChatMessages"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.data"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.page"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.total"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedChatMessages.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedChatMessages.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedAgentLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedAgentLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedAgentLogs.has_more</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#PaginatedWorkflowLogs"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.data"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.page"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.limit"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.total"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#PaginatedWorkflowLogs.has_more"><code class="docutils literal notranslate"><span class="pre">PaginatedWorkflowLogs.has_more</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#workflow-execution-models">Workflow Execution Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.parallel_start_node_id"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.parallel_start_node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.tool_info"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.tool_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_tokens"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.total_price"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.total_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutionMetadata.currency"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutionMetadata.currency</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#WorkflowNodeExecutions"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#WorkflowNodeExecutions.data"><code class="docutils literal notranslate"><span class="pre">WorkflowNodeExecutions.data</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -406,7 +634,7 @@
 <dd><p>Base client class providing core functionality.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyBaseClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#Credentials" title="Credentials"><span class="pre">Credentials</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyBaseClient.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#Credentials" title="Credentials"><span class="pre">Credentials</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyBaseClient.__init__" title="Link to this definition"></a></dt>
 <dd><p>Initialize a new client.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -426,7 +654,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyBaseClient._send_user_request">
-<span class="sig-name descname"><span class="pre">_send_user_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyBaseClient._send_user_request" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_send_user_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyBaseClient._send_user_request" title="Link to this definition"></a></dt>
 <dd><p>Send an authenticated request to the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -450,79 +678,79 @@
 <dd><p>Client for user-facing operations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.update_timezone">
-<span class="sig-name descname"><span class="pre">update_timezone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Europe/Moscow'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyUserClient.update_timezone" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_timezone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Europe/Moscow'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyUserClient.update_timezone" title="Link to this definition"></a></dt>
 <dd><p>Update user timezone setting.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.update_system_model">
-<span class="sig-name descname"><span class="pre">update_system_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyUserClient.update_system_model" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_system_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyUserClient.update_system_model" title="Link to this definition"></a></dt>
 <dd><p>Update system model settings.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="DifyUserClient.apps">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apps</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">App</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.apps" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apps</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">App</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.apps" title="Link to this definition"></a></dt>
 <dd><p>Get all available applications.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.get_app">
-<span class="sig-name descname"><span class="pre">get_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">App</span></span></span><a class="headerlink" href="#DifyUserClient.get_app" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">App</span></span></span><a class="headerlink" href="#DifyUserClient.get_app" title="Link to this definition"></a></dt>
 <dd><p>Get a specific application by ID.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="DifyUserClient.tool_providers">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tool_providers</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="tools.html#ToolProvider" title="ToolProvider"><span class="pre">ToolProvider</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.tool_providers" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tool_providers</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="tools.html#ToolProvider" title="ToolProvider"><span class="pre">ToolProvider</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.tool_providers" title="Link to this definition"></a></dt>
 <dd><p>Get all available tool providers.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.get_tool_provider">
-<span class="sig-name descname"><span class="pre">get_tool_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="tools.html#ToolProvider" title="ToolProvider"><span class="pre">ToolProvider</span></a></span></span><a class="headerlink" href="#DifyUserClient.get_tool_provider" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_tool_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="tools.html#ToolProvider" title="ToolProvider"><span class="pre">ToolProvider</span></a></span></span><a class="headerlink" href="#DifyUserClient.get_tool_provider" title="Link to this definition"></a></dt>
 <dd><p>Get a specific tool provider by ID.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="DifyUserClient.tools">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tools</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="tools.html#Tool" title="Tool"><span class="pre">Tool</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.tools" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tools</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="tools.html#Tool" title="Tool"><span class="pre">Tool</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.tools" title="Link to this definition"></a></dt>
 <dd><p>Get all available tools.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.get_tool">
-<span class="sig-name descname"><span class="pre">get_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="tools.html#Tool" title="Tool"><span class="pre">Tool</span></a></span></span><a class="headerlink" href="#DifyUserClient.get_tool" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="tools.html#Tool" title="Tool"><span class="pre">Tool</span></a></span></span><a class="headerlink" href="#DifyUserClient.get_tool" title="Link to this definition"></a></dt>
 <dd><p>Get a specific tool by name.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="DifyUserClient.model_providers">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_providers</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="llms.html#ModelProvider" title="ModelProvider"><span class="pre">ModelProvider</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.model_providers" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_providers</span></span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="llms.html#ModelProvider" title="ModelProvider"><span class="pre">ModelProvider</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#DifyUserClient.model_providers" title="Link to this definition"></a></dt>
 <dd><p>Get all available model providers.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.get_model_provider">
-<span class="sig-name descname"><span class="pre">get_model_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="llms.html#ModelProvider" title="ModelProvider"><span class="pre">ModelProvider</span></a></span></span><a class="headerlink" href="#DifyUserClient.get_model_provider" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_model_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="llms.html#ModelProvider" title="ModelProvider"><span class="pre">ModelProvider</span></a></span></span><a class="headerlink" href="#DifyUserClient.get_model_provider" title="Link to this definition"></a></dt>
 <dd><p>Get a specific model provider by ID.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.create_app">
-<span class="sig-name descname"><span class="pre">create_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AppType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'emoji'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'image'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'emoji'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'🤖'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon_background</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFEAD5'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">App</span></span></span><a class="headerlink" href="#DifyUserClient.create_app" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AppType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'emoji'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'image'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'emoji'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'🤖'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon_background</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFEAD5'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">App</span></span></span><a class="headerlink" href="#DifyUserClient.create_app" title="Link to this definition"></a></dt>
 <dd><p>Create a new application.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.create_app_from_yaml">
-<span class="sig-name descname"><span class="pre">create_app_from_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">App</span></span></span><a class="headerlink" href="#DifyUserClient.create_app_from_yaml" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_app_from_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">App</span></span></span><a class="headerlink" href="#DifyUserClient.create_app_from_yaml" title="Link to this definition"></a></dt>
 <dd><p>Create a new application from YAML configuration.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyUserClient.delete_app">
-<span class="sig-name descname"><span class="pre">delete_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyUserClient.delete_app" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyUserClient.delete_app" title="Link to this definition"></a></dt>
 <dd><p>Delete an application.</p>
 </dd></dl>
 
@@ -537,7 +765,7 @@
 <dd><p>Combined client providing access to both user and knowledge operations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="DifyClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#Credentials" title="Credentials"><span class="pre">Credentials</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyClient.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#Credentials" title="Credentials"><span class="pre">Credentials</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DifyClient.__init__" title="Link to this definition"></a></dt>
 <dd><p>Initialize a new combined client.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
